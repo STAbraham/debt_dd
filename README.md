@@ -1,21 +1,29 @@
 # Zed debt DD — working conventions
 
-Docs for Zed's debt-facility due diligence. Living docs (diligence tracker, lender Q&A, data-room notes, term-sheet analyses) live at the top level and will be added as the process kicks off; each carries a version, changelog, and stable IDs.
+Workspace for responding to debt-facility due diligence from credit funds. The `debt-dd` skill (in `~/.claude/skills/debt-dd/`) operates this repo; this README is the contract a fresh session works from.
 
-## How iteration works
+## Layout
 
-1. **Drop raw inputs in `inbox/`** — email PDFs, call notes, screenshots, pasted threads, DD questionnaires, anything. No formatting needed; a `.md` with three bullets from a call is fine. Name with a date if convenient (`YYYY-MM-DD-<source>.md`).
-2. **Tell Claude "process the inbox"** (any session). Claude reads each item, updates the docs, appends a changelog entry, moves the item to `inbox/processed/`, and commits.
-3. **Review by diff, not by re-reading.** Every doc change is a git commit. Ask "what changed since I last read?" or use `git log --oneline` / `git diff <sha>` — the changelog at the top of each doc tells the same story in prose.
+- **`TRACKER.md`** — source of truth for every diligence question: ID, status, question, response. Outbound spreadsheets are *generated* from it (`python3 scripts/export_responses.py [YYYYMMDD]`); `**Note (internal):**` and `**Delivered:**` lines never leave the file.
+- **`SHARED-LOG.md`** — provenance ledger: every artifact the fund has received, when, and via which channel. Updated on every share, no exceptions.
+- **`Data Room/`** — mirror of the actual Box data room (Financials, Loan Tape, Payment Data, Q1 Board Deck, …). Keep in lockstep with Box: anything uploaded there gets copied here (and vice versa) plus a SHARED-LOG row.
+- **`Prior Responses (outside data room)/`** — artifacts shared via email only (non-standard requests we deliberately keep out of the data room).
+- **`Diligence Question Responses/`** — archive of outbound response spreadsheets actually sent, dated.
+- **`inbox/`** → **`inbox/processed/`** — raw inputs land in the former, move to the latter once propagated.
 
-## Stable anchors (the interface for feedback)
+## How a diligence turn works
 
-- **Decisions:** D-numbers in the main doc. To revisit one, reference it by ID ("lender says no — reopen D3").
-- **Requirements / diligence items:** R-numbers (and other lettered series) in the docs.
-- **Open questions:** numbered; partner/lender answers slot in by number ("they answered #2: …").
-- Docs carry per-section status tags: `VERIFIED` (checked against code/data/authoritative docs), `ASSUMED` (safe default, proceeding), `PENDING <owner>` (blocked on an external answer).
-- IDs are never renumbered — retired items get strikethrough so old references stay valid.
+1. **Drop raw inputs in `inbox/`** — fund emails with new questions, call notes, raw data pulls, anything. No formatting needed.
+2. **Say "process the inbox."** New questions get inventoried into `TRACKER.md` with stable IDs (next number in the matching section, or a new section). Each gets a response channel: tracker text, data-room pointer ("See X in Data Room / Y"), new data-room upload, or email attachment for non-standard asks. Data pulls needed to answer can come from the BigQuery warehouse (prod-data-warehouse / report skills). Draft responses land as `Drafted` for review.
+3. **Review by diff** — every turn is a commit; `git log` / the TRACKER changelog tell the story. Approve or edit drafts by ID ("1.6 is fine, soften 4.2").
+4. **Say "prep the response"** when ready to send: the export script produces the dated xlsx, email-only attachments are staged, and once sent, statuses flip to Closed/Partial and SHARED-LOG gets its rows.
 
-## Current external dependencies (who owes what)
+## Stable anchors
 
-- *(none yet — add one line per open external thread as they arise: who owes what, and what it gates.)*
+- Question IDs (`1.1`, `4.2`, …) are never renumbered; new questions in an existing topic area take the next number in that section.
+- Statuses: `Open` (we owe) · `Drafted` (written, unreviewed) · `Partial` (sent, more owed) · `Closed`.
+- Every artifact that leaves the building = one SHARED-LOG row per channel, same day.
+
+## Sensitivity
+
+Personal private repo (`STAbraham/debt_dd`) — deliberately not the org. Pre-decisional negotiation content; keep it that way until the facility is signed.
