@@ -26,6 +26,11 @@ Workspace for responding to debt-facility due diligence from credit funds. The `
 - Statuses: `Open` (we owe) · `Drafted` (written, unreviewed) · `Partial` (sent, more owed) · `Closed`.
 - Every artifact that leaves the building = one SHARED-LOG row per channel, same day.
 
+## Who owes what (keep current)
+
+- **FPF (Raymond):** indicative terms — committed on the 2026-08-12 call after reviewing the data.
+- **Zed:** responses to the 8/26 follow-up questions (items 1–8, in flight via the working sheet); follow-up call times for Raymond (requested in his 8/26 email).
+
 ## Sensitivity
 
 Personal private repo (`STAbraham/debt_dd`) — deliberately not the org. Pre-decisional negotiation content; keep it that way until the facility is signed.
