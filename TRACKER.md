@@ -1,10 +1,11 @@
 # Diligence Tracker
 
-**Status:** v4 — all 14 initial-doc items closed (5.1 confirmed closed by Steve). Live work is the 8/26 email batch: 7 open (items 1, 2, 3, 5, 6, 7, 8), 1 drafted awaiting Steve review (item 4).
+**Status:** v6 — all 14 initial-doc items closed. Live work is the 8/26 email batch: 5 open (items 3, 5, 6, 7, 8), 3 drafted awaiting Steve review (items 1, 2, 4).
 **This file is the source of truth.** The outbound spreadsheet is generated from it via `scripts/export_responses.py`; Steve reviews in `WORKING - Diligence Responses.xlsx`. Lines marked `**Note (internal):**` are never exported.
 **ID convention:** IDs are exactly the fund's own numbering for each request batch. The initial questions doc was unnumbered bullets under sections, so it became 1.1–5.3 (section.order); the 2026-08-26 email numbers its questions 1–8, so those items are simply 1–8. When citing an item, name the batch if ambiguous ("8/26 item 3"). IDs never change once a response sheet containing them has been sent.
 
 **Changelog**
+- **v6 (2026-09-01):** Working-sheet sync. Steve supplied the full installment economics walkthrough for item 1 (upfront fee billed entirely in enrollment cycle; 1%/mo add-on totalling 3/6/12% by term end; first-cycle cancellation treated as a graceful foot-fault unwind) — restructured per his note and used as the template for item 2's revolver/pay-in-full walkthrough (grounded in 1.2/1.4 as sent). Both now Drafted; flow-of-funds/entity half remains an explicit placeholder in each.
 - **v5 (2026-09-01):** Processed Granola notes from the 8/12 call (inbox → processed). 5.1's resolution recorded: Raymond clarified he does not need transaction-level data — the statement tape's per-user statement/payment history covers the intent. The "~2% loss figure" in 8/26 item 8 is now grounded: it's the call's headline metric, dollars originated that go past due (target 1–3%, currently ~2%, vs US prime benchmarks) — item 8 draft upgraded, exact computation still to verify. Context notes added to items 2 and 7. Raymond owes Zed indicative terms per the call.
 - **v4 (2026-09-01):** Closed 5.1 per Steve (resolved after the 8/12 call). Renumbered the 8/26 batch from 6.1–6.8 to the email's own numbering, 1–8, per Steve — the tracker mirrors each batch's numbering verbatim.
 - **v3 (2026-09-01):** Renumbered the 8/26 follow-up questions into section 6 (6.1–6.8, matching the email's own order) after Steve supplied the fund's original questions doc, confirming the convention that IDs track the fund's list order. Old IDs 2.4→6.1, 2.5→6.2, 5.4→6.3, 2.6→6.4, 5.5→6.5, 2.7→6.6, old 6.1→6.7, 4.3→6.8 — safe because none were ever sent. Original questions doc archived to inbox/processed.
@@ -111,14 +112,30 @@ Installment loans and associated terms do not exist indepedently of the credit c
 
 ## 6. Follow-up questions (fund email 2026-08-26 — items keep the email's own numbers 1–8)
 
-### 1 Installment purchase — economics walkthrough [Open]
+### 1 Installment purchase — economics walkthrough [Drafted]
 **Q:** Walk through the economics of a typical installment purchase, from the swipe through to final payment: revenue lines and their timing (interchange net of network and processor costs, what's charged upfront at origination, what accrues over the term), plus the flow of funds — who pays whom, when, and which entity each flow lands in.
-**A:** [draft skeleton — revenue lines and timing:] At the swipe, Zed earns interchange on the purchase, net of network and processor costs [Steve: net interchange economics — see item 6]. At plan opt-in, an upfront fee of 0.5% × term months (1.5% / 3% / 6% for 3/6/12-month terms) is charged to the account. Over the term, add-on interest of 1% of original principal per month is billed on each monthly statement. On early termination, a cancellation fee equal to the current month's interest applies and the upfront fee is retained (both reversed/waived if cancelled in the first month). [Steve: flow of funds — who pays whom, when, and which entity each flow lands in.]
-**Note (internal):** Fund email 2026-08-26, item 1. Fee mechanics verified against the installment tape (see METHODS.md). The entity/flow-of-funds half cannot be drafted from repo materials — Steve/finance owe it.
+**A:** Interchange: at the swipe, Zed earns interchange on an installment-enrolled purchase exactly as on any other transaction (net interchange economics covered in item 6).
 
-### 2 Revolver and pay-in-full — economics walkthrough [Open]
+Origination: at enrollment, an upfront fee of 0.5% × term months (1.5% / 3% / 6% for the 3 / 6 / 12-month terms, respectively) is charged to the account and billed in its entirety in the statement cycle in which the purchase was enrolled.
+
+Over the term: add-on interest of 1% × original principal is billed on each monthly statement — so by end of term, total interest of 3% / 6% / 12% of principal has been charged for the 3 / 6 / 12-month terms.
+
+Early termination: a cancellation fee equal to the current statement cycle's interest is charged and the upfront fee is retained, with one exception — if a purchase is enrolled into installments and cancelled within that same first statement cycle, we charge no interest and reverse the upfront fee. Nothing has been billed at that point and the user hasn't yet floated any of the purchase via installments, so we treat it as a foot fault and allow them to unwind the enrollment without any implications.
+
+[Steve: the question also asks for the flow of funds — who pays whom, when, and which entity each flow lands in. Answer here, or handle on the follow-up call?]
+**Note (internal):** Fund email 2026-08-26, item 1. Steve's own explanation (working-sheet sync 2026-09-01), lightly restructured per his note; fee mechanics verified against the installment tape (see METHODS.md). Flow-of-funds/entity half still unanswered — kept as an explicit placeholder.
+
+### 2 Revolver and pay-in-full — economics walkthrough [Drafted]
 **Q:** Same walkthrough for a revolving balance and for a pay-in-full statement, to see how the three products differ economically.
-**A:** [draft skeleton:] Pay-in-full: Zed earns interchange on spend; no interest or fees if paid by the due date. Revolver: interchange on spend plus interest at 3% per month on the revolving balance; minimum payment per the formula in 1.2. Late fees apply to either on missed payment. [Steve: flow of funds and entity detail, consistent with item 1.]
+**A:** Interchange: identical to the installment case — at the swipe, Zed earns interchange on the purchase like any other transaction, regardless of how the balance is later paid.
+
+Pay-in-full: charges aggregate into the statement balance at cycle end. If the cardholder pays the statement balance in full by the due date, no interest or fees are ever charged — the economics to Zed are interchange only.
+
+Revolving: if the cardholder pays at least the minimum payment (formula per our response to 1.2) but less than the full statement balance, the unpaid remainder revolves and accrues interest at 3% per month. Only charges made after the revolving launch are eligible to revolve.
+
+Missed payment: if the minimum payment is not met by the due date, late fees are charged, the account becomes past due, and a hard card freeze applies at DPD 1 (per our response to 1.4).
+
+[Steve: flow of funds and entity detail, same as item 1.]
 **Note (internal):** Fund email 2026-08-26, item 2. Rates grounded in 1.2 (sent). Same flow-of-funds gap as item 1. Context the fund heard on the 8/12 call: revolving is the primary revenue driver; 33% of users use installments or revolving, 7% both, 10% installments only; installment users skew transactor. Verify these figures before putting them in a written response.
 
 ### 3 "Installment fees" field definition [Open]
