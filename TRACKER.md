@@ -7,7 +7,7 @@
 - **v2 (2026-09-01):** Processed the FPF email thread (inbox). Closed 4.2 (90+ recovery breakdown emailed 2026-08-11), 5.2 and 2.2 (installment plan tape emailed 2026-08-21 — Steve's email: "close out the last open item (5.2)"). Added the 8 new questions from Katz's 8/26 email as 2.4–2.7, 4.3, 5.4, 5.5, and new section 6 (Pricing and regulatory). Verified the fee schedule against `Installment Tape_20260814.xlsx` (all 4,974 plans: upfront = 0.5% × term months; add-on = 1.0%/month on 4,897 plans, 77 at 0%) — drafted 2.6 on that basis. 5.1 stays open pending the outcome of the 8/12 call.
 - **v1 (2026-09-01):** Imported all 14 items verbatim from the 8/5 response spreadsheet. Flagged that `Installment Tape_20260814.xlsx` (now in Data Room / Loan Tape) appears to fulfill 5.2 and the detail promised in 2.2 — statuses left as sent, pending Steve's confirmation.
 
-**Item statuses:** `Open` (we owe an answer) · `Drafted` (response written, not yet reviewed/sent) · `Partial` (sent, more owed) · `Closed` (sent and complete).
+**Item statuses:** `Open` (we owe an answer) · `Drafted` (response written, not yet reviewed) · `Approved` (Steve signed off in the working sheet; exports as Closed) · `Partial` (sent, more owed) · `Closed` (sent and complete).
 
 ---
 

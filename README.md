@@ -16,8 +16,9 @@ Workspace for responding to debt-facility due diligence from credit funds. The `
 
 1. **Drop raw inputs in `inbox/`** — fund emails with new questions, call notes, raw data pulls, anything. No formatting needed.
 2. **Say "process the inbox."** New questions get inventoried into `TRACKER.md` with stable IDs (next number in the matching section, or a new section). Each gets a response channel: tracker text, data-room pointer ("See X in Data Room / Y"), new data-room upload, or email attachment for non-standard asks. Data pulls needed to answer can come from the BigQuery warehouse (prod-data-warehouse / report skills). Draft responses land as `Drafted` for review.
-3. **Review by diff** — every turn is a commit; `git log` / the TRACKER changelog tell the story. Approve or edit drafts by ID ("1.6 is fine, soften 4.2").
-4. **Say "prep the response"** when ready to send: the export script produces the dated xlsx, email-only attachments are staged, and once sent, statuses flip to Closed/Partial and SHARED-LOG gets its rows.
+3. **Collaborate in the working sheet, not the markdown.** `python3 scripts/make_working_sheet.py` (Claude runs it after processing) regenerates `WORKING - Diligence Responses.xlsx`: every open item with the current draft in an editable Response column (yellow), a Verdict dropdown (Approved / Claude: revise (see notes) / Discuss), and a Notes-to-Claude column. Answer some questions yourself right in the Response cells, hand others to Claude via notes ("pull this from BQ", "draft this, here's the gist"). Closed items sit on a reference tab.
+4. **Say "sync the working sheet."** Claude reads your edits back into `TRACKER.md` — your text verbatim (your voice wins), verdicts flip statuses (Approved), notes get acted on — then regenerates a fresh working sheet and commits. The stale sheet is dead after every sync: always edit the latest.
+5. **Say "prep the response"** once items are Approved: the export script produces the dated outbound xlsx (Approved rows export as Closed; internal notes and `[Steve: …]` placeholders never leave), email-only attachments are staged, and after you confirm the send, statuses flip and SHARED-LOG gets its rows.
 
 ## Stable anchors
 

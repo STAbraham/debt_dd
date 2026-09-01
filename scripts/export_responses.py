@@ -46,13 +46,17 @@ def parse(md: str):
         elif line.startswith("**A:**"):
             field = "a"
             cur["a"].append(line[len("**A:**"):].strip())
-        elif any(line.startswith(f) for f in INTERNAL_FIELDS):
-            field = None
+        elif line.startswith("**Note (internal):**"):
+            field = "note"
+            cur.setdefault("note", []).append(line[len("**Note (internal):**"):].strip())
+        elif line.startswith("**Delivered:**"):
+            field = "delivered"
+            cur.setdefault("delivered", []).append(line[len("**Delivered:**"):].strip())
         elif field:
-            cur[field].append(line)
+            cur.setdefault(field, []).append(line)
     for it in items:
-        for k in ("q", "a"):
-            it[k] = "\n".join(it[k]).strip().replace("\\*", "*")
+        for k in ("q", "a", "note", "delivered"):
+            it[k] = "\n".join(it.get(k, [])).strip().replace("\\*", "*")
     return items
 
 
@@ -63,7 +67,11 @@ def main():
         sys.exit("No items parsed from TRACKER.md — check heading format '### <id> <topic> [<Status>]'.")
     drafted = [it["id"] for it in items if it["status"] == "Drafted"]
     if drafted:
-        print(f"WARNING: still Drafted (review before sending): {', '.join(drafted)}")
+        print(f"WARNING: still Drafted, not Approved (review before sending): {', '.join(drafted)}")
+    # fund-facing status: an Approved item is being answered by this very sheet
+    for it in items:
+        if it["status"] == "Approved":
+            it["status"] = "Closed"
 
     wb = Workbook()
     ws = wb.active
