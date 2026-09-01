@@ -6,6 +6,7 @@ Workspace for responding to debt-facility due diligence from credit funds. The `
 
 - **`TRACKER.md`** — source of truth for every diligence question: ID, status, question, response. Outbound spreadsheets are *generated* from it (`python3 scripts/export_responses.py [YYYYMMDD]`); `**Note (internal):**` and `**Delivered:**` lines never leave the file.
 - **`SHARED-LOG.md`** — provenance ledger: every artifact the fund has received, when, and via which channel. Updated on every share, no exceptions.
+- **`METHODS.md`** — internal-only record of how each produced data artifact/analysis was built (sources, queries, filters, caveats, review status), written the same turn the work is done. BigQuery is the source of truth for data questions; risky assumptions get raised to Steve as `[Steve: …]` placeholders instead of being resolved unilaterally.
 - **`Data Room/`** — mirror of the actual Box data room (Financials, Loan Tape, Payment Data, Q1 Board Deck, …). Keep in lockstep with Box: anything uploaded there gets copied here (and vice versa) plus a SHARED-LOG row.
 - **`Prior Responses (outside data room)/`** — artifacts shared via email only (non-standard requests we deliberately keep out of the data room).
 - **`Diligence Question Responses/`** — archive of outbound response spreadsheets actually sent, dated.
