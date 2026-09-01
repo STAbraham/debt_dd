@@ -1,10 +1,11 @@
 # Diligence Tracker
 
-**Status:** v3 — FPF follow-up questions renumbered to match the fund's email order. 8 open (5.1, 6.1, 6.2, 6.3, 6.5, 6.6, 6.7, 6.8), 1 drafted awaiting Steve review (6.4), 13 closed.
+**Status:** v4 — all 14 initial-doc items closed (5.1 confirmed closed by Steve). Live work is the 8/26 email batch: 7 open (items 1, 2, 3, 5, 6, 7, 8), 1 drafted awaiting Steve review (item 4).
 **This file is the source of truth.** The outbound spreadsheet is generated from it via `scripts/export_responses.py`; Steve reviews in `WORKING - Diligence Responses.xlsx`. Lines marked `**Note (internal):**` are never exported.
-**ID convention:** IDs mirror the fund's own lists — each request batch is a section, items numbered in the order the fund asked them (sections 1–5 = the initial questions doc; section 6 = the 2026-08-26 email, 6.N = email item N). IDs never change once a response sheet containing them has been sent.
+**ID convention:** IDs are exactly the fund's own numbering for each request batch. The initial questions doc was unnumbered bullets under sections, so it became 1.1–5.3 (section.order); the 2026-08-26 email numbers its questions 1–8, so those items are simply 1–8. When citing an item, name the batch if ambiguous ("8/26 item 3"). IDs never change once a response sheet containing them has been sent.
 
 **Changelog**
+- **v4 (2026-09-01):** Closed 5.1 per Steve (resolved after the 8/12 call). Renumbered the 8/26 batch from 6.1–6.8 to the email's own numbering, 1–8, per Steve — the tracker mirrors each batch's numbering verbatim.
 - **v3 (2026-09-01):** Renumbered the 8/26 follow-up questions into section 6 (6.1–6.8, matching the email's own order) after Steve supplied the fund's original questions doc, confirming the convention that IDs track the fund's list order. Old IDs 2.4→6.1, 2.5→6.2, 5.4→6.3, 2.6→6.4, 5.5→6.5, 2.7→6.6, old 6.1→6.7, 4.3→6.8 — safe because none were ever sent. Original questions doc archived to inbox/processed.
 - **v2 (2026-09-01):** Processed the FPF email thread (inbox). Closed 4.2 (90+ recovery breakdown emailed 2026-08-11), 5.2 and 2.2 (installment plan tape emailed 2026-08-21 — Steve's email: "close out the last open item (5.2)"). Added the 8 new questions from Katz's 8/26 email. Verified the fee schedule against `Installment Tape_20260814.xlsx` (all 4,974 plans: upfront = 0.5% × term months; add-on = 1.0%/month on 4,897 plans, 77 at 0%) — drafted the fee-schedule response on that basis. 5.1 stays open pending the outcome of the 8/12 call.
 - **v1 (2026-09-01):** Imported all 14 items verbatim from the 8/5 response spreadsheet. Flagged that `Installment Tape_20260814.xlsx` (now in Data Room / Loan Tape) appears to fulfill 5.2 and the detail promised in 2.2 — statuses left as sent, pending Steve's confirmation.
@@ -90,10 +91,11 @@ Installment loans and associated terms do not exist indepedently of the credit c
 
 ## 5. Data requested
 
-### 5.1 Payment-level tape [Open]
+### 5.1 Payment-level tape [Closed]
 **Q:** Per transaction/payment: full payment-level tape (charge date, payment date, amount) for all accounts since inception — transactions and payments, not statement summaries.
 **A:** To discuss.
-**Note (internal):** Positioned as "to discuss" in the 8/5 response — decision owed by Steve on whether to provide raw transaction/payment-level data. A call to scope this was held 2026-08-12 3:30pm Panama time (per email thread); outcome not recorded anywhere in the repo — Steve to say what was agreed so this can move.
+**Delivered:** "To discuss" sent in the 8/5 response sheet; scoped on the 2026-08-12 call and since resolved
+**Note (internal):** Steve confirmed closed (2026-09-01). The substance of the resolution isn't recorded in the repo — worth capturing if the fund ever revisits the request.
 
 ### 5.2 Installment plan tape [Closed]
 **Q:** Per installment plan: plan ID, origination date, term, fee, status, cancellation/acceleration date and reason.
@@ -106,44 +108,44 @@ Installment loans and associated terms do not exist indepedently of the credit c
 **A:** The loan tape shows unique cardholders and their origination cohort, which can be joined with the statement tape to show, by unique cardholder, statement charges and credits. We added gross installment conversions as well. DPD columns show what statements balances ever went past due or are currently past due. The statement data can be used to reconstruct every unique cardholders charges and payment history by using the UID key.
 **Delivered:** response sheet 2026-08-05
 
-## 6. Follow-up questions (fund email 2026-08-26)
+## 6. Follow-up questions (fund email 2026-08-26 — items keep the email's own numbers 1–8)
 
-### 6.1 Installment purchase — economics walkthrough [Open]
+### 1 Installment purchase — economics walkthrough [Open]
 **Q:** Walk through the economics of a typical installment purchase, from the swipe through to final payment: revenue lines and their timing (interchange net of network and processor costs, what's charged upfront at origination, what accrues over the term), plus the flow of funds — who pays whom, when, and which entity each flow lands in.
-**A:** [draft skeleton — revenue lines and timing:] At the swipe, Zed earns interchange on the purchase, net of network and processor costs [Steve: net interchange economics — see 6.6]. At plan opt-in, an upfront fee of 0.5% × term months (1.5% / 3% / 6% for 3/6/12-month terms) is charged to the account. Over the term, add-on interest of 1% of original principal per month is billed on each monthly statement. On early termination, a cancellation fee equal to the current month's interest applies and the upfront fee is retained (both reversed/waived if cancelled in the first month). [Steve: flow of funds — who pays whom, when, and which entity each flow lands in.]
+**A:** [draft skeleton — revenue lines and timing:] At the swipe, Zed earns interchange on the purchase, net of network and processor costs [Steve: net interchange economics — see item 6]. At plan opt-in, an upfront fee of 0.5% × term months (1.5% / 3% / 6% for 3/6/12-month terms) is charged to the account. Over the term, add-on interest of 1% of original principal per month is billed on each monthly statement. On early termination, a cancellation fee equal to the current month's interest applies and the upfront fee is retained (both reversed/waived if cancelled in the first month). [Steve: flow of funds — who pays whom, when, and which entity each flow lands in.]
 **Note (internal):** Fund email 2026-08-26, item 1. Fee mechanics verified against the installment tape (see METHODS.md). The entity/flow-of-funds half cannot be drafted from repo materials — Steve/finance owe it.
 
-### 6.2 Revolver and pay-in-full — economics walkthrough [Open]
+### 2 Revolver and pay-in-full — economics walkthrough [Open]
 **Q:** Same walkthrough for a revolving balance and for a pay-in-full statement, to see how the three products differ economically.
-**A:** [draft skeleton:] Pay-in-full: Zed earns interchange on spend; no interest or fees if paid by the due date. Revolver: interchange on spend plus interest at 3% per month on the revolving balance; minimum payment per the formula in 1.2. Late fees apply to either on missed payment. [Steve: flow of funds and entity detail, consistent with 6.1.]
-**Note (internal):** Fund email 2026-08-26, item 2. Rates grounded in 1.2 (sent). Same flow-of-funds gap as 6.1.
+**A:** [draft skeleton:] Pay-in-full: Zed earns interchange on spend; no interest or fees if paid by the due date. Revolver: interchange on spend plus interest at 3% per month on the revolving balance; minimum payment per the formula in 1.2. Late fees apply to either on missed payment. [Steve: flow of funds and entity detail, consistent with item 1.]
+**Note (internal):** Fund email 2026-08-26, item 2. Rates grounded in 1.2 (sent). Same flow-of-funds gap as item 1.
 
-### 6.3 "Installment fees" field definition [Open]
+### 3 "Installment fees" field definition [Open]
 **Q:** Define what the "installment fees" field in the tape contains: the upfront origination fee, the monthly add-on interest, or both combined.
 **A:** To be provided.
 **Note (internal):** Fund email 2026-08-26, item 3. Do not draft from inference — the answer depends on how the tape extract was built. Verify empirically (trace plans from the installment tape into their statement-tape rows, and/or against the warehouse) or confirm with whoever built the extract (Josif?), then write the definition. Verification pending — see METHODS.md.
 
-### 6.4 Fee schedule confirmation [Drafted]
+### 4 Fee schedule confirmation [Drafted]
 **Q:** Confirm the fee schedule: add-on rate by tenor, and the origination fee formula (told 0.5% × number of months; 3% on a 6-month term). Is the fee netted from the disbursement or financed into the balance? Refundable on prepayment? Is unearned add-on interest rebated?
 **A:** Confirmed. The origination fee is 0.5% × term months (1.5% for 3-month, 3% for 6-month, 6% for 12-month terms) and the add-on rate is 1% of original principal per month, flat across tenors. There is no cash disbursement — an installment plan converts an existing card purchase — so nothing is netted: the origination fee is charged to the account and billed on the statement. If a plan is terminated in the first month, the origination fee is reversed and no cancellation fee applies; after the first month, the origination fee is retained and a cancellation fee equal to the current month's interest is charged. Add-on interest is billed monthly only while the plan is active, so unearned interest for remaining months is never charged (no rebate needed).
 **Note (internal):** Fund email 2026-08-26, item 4. Verified against all 4,974 plans in `Installment Tape_20260814.xlsx` (see METHODS.md): upfront/principal exactly 0.5% × months; monthly interest/principal exactly 1.0% on 4,897 plans; 77 plans show 0% interest — [Steve: promo plans? worth knowing before the fund asks]. Consistent with the 2.1 response already sent.
 
-### 6.5 Revenue fields absent from the tape [Open]
+### 5 Revenue fields absent from the tape [Open]
 **Q:** The tape shows late fees and installment fees but no interchange, annual fee, upfront fee, cash advance fee, etc. Is that because those revenues do not attach to the receivable, or because they were excluded from the extract?
 **A:** [partial draft:] Interchange is earned on the merchant/network side of each transaction and never posts to the cardholder account, so it does not appear in a receivables tape. [Steve: confirm which of the other fee types exist at all as Zed products (annual fee? cash advance?) — the honest answer may simply be that these products don't exist — and whether anything that does bill to cardholders was excluded from the extract.]
-**Note (internal):** Fund email 2026-08-26, item 5. Ties to 6.3 — answer both together once the extract's contents are confirmed.
+**Note (internal):** Fund email 2026-08-26, item 5. Ties to item 3 — answer both together once the extract's contents are confirmed.
 
-### 6.6 Net interchange as % of GMV [Open]
+### 6 Net interchange as % of GMV [Open]
 **Q:** Net interchange as a percentage of GMV for the last six months, split domestic vs international if possible.
 **A:** To be provided.
 **Note (internal):** Fund email 2026-08-26, item 6. Candidate BigQuery pull — needs Steve's sign-off on definitions before running (net of network + processor costs? which GMV base? is the domestic/international split available in our data?). Unit econ file shows interchange only bundled with installment interest and fees ($6.41/account/mo), so this is a new cut.
 
-### 6.7 BSP rate ceilings and pricing headroom [Open]
+### 7 BSP rate ceilings and pricing headroom [Open]
 **Q:** Both the revolving rate (3%/month) and installment add-on (1%/month) sit exactly at the BSP ceilings. Confirm there is no pricing headroom, and what happens to program economics if BSP cuts the ceiling at a semiannual review.
 **A:** [partial draft:] Confirmed — our revolving rate is 3% per month and the installment add-on is 1% per month, at the current BSP ceilings. [Steve: the sensitivity answer — impact on program economics of a ceiling cut, and any mitigants (fee mix, funding cost, underwriting).]
 **Note (internal):** Fund email 2026-08-26, item 7. Rates verified (1.2 as sent; installment tape per METHODS.md). The headroom/sensitivity narrative is strategy — Steve's voice required. Consider whether the unit econ pro forma should be the quantitative backbone of the answer.
 
-### 6.8 Loss figure basis, charge-off policy, restructures [Open]
+### 8 Loss figure basis, charge-off policy, restructures [Open]
 **Q:** What's the basis for the ~2% loss figure provided (30+/90+ DPD, annualized NCL, cumulative) and its denominator? Charge-off policy in DPD, any change since launch, and approach to restructures/re-aging.
 **A:** [policy half, from 4.1/1.4 as sent:] Per our ECL policy we provision 100% at 180+ DPD; we have not yet formally written off balances while we stand up the collections-substantiation and BIR documentation required, and the policy is unchanged since launch. Re-aging to Current requires all arrears cleared. [Steve: basis and denominator of the ~2% figure; whether any restructure program exists.]
 **Note (internal):** Fund email 2026-08-26, item 8. **The ~2% loss figure appears in no repo artifact** — the shared unit econ file implies loan-loss provision ≈ 49% of gross revenue per active account, so ~2% must be a different basis (likely quoted on the 8/12 call or in the deck). Steve must identify where it came from and its intended definition before we answer; getting this wrong contradicts something the fund already heard.
