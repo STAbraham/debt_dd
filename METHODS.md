@@ -23,6 +23,14 @@
 **Caveats:** T+1 settlement timing and "net of MDR / net of interchange" framing are Steve's description, not independently verified. Not yet uploaded to Box — SHARED-LOG row pending Steve's confirmation.
 **Reviewed by:** Steve (iterated live in this session; content approved before PDF render).
 
+## 2026-09-03 — Interchange data does NOT exist in the warehouse (negative finding; scopes item 11)
+
+**Question:** Can item 11 (net interchange % of GMV) be answered from BigQuery? Steve suspected not.
+**Method:** Scanned `epicac-2.epicac_prod_direct.INFORMATION_SCHEMA.COLUMNS` across all 62 tables for `%interchange%`, `%mdr%`, and settlement/revenue/fee/network table names; inspected fee/amount/settlement columns on `public_transactions` and `public_network_messages`.
+**Finding:** No interchange, MDR, or settlement-fee field anywhere. Transaction tables carry only gross amounts (`amount`, `amount_requested`). Consistent with the warehouse being a CDC mirror of the app Postgres DB — interchange is earned on the network/settlement side and never posts to cardholder accounts. Only fee-adjacent tables: `public_late_payment_fees`, `public_network_messages` (auth messages, no economics).
+**Implication:** Item 11's numerator must come from i2c/Mastercard settlement reporting or finance records; BQ can only supply the GMV denominator once the base is defined.
+**Reviewed by:** pending Steve.
+
 ## Open verification (started, not finished)
 
 - **8/26 item 3 — what the statement tape's "Installment Fees" column contains** (upfront only vs upfront + monthly add-on): plan-to-statement trace was queued when the 2026-09-01 session paused; per Steve, use BigQuery as the source of truth and/or confirm with whoever built the extract. Record the result here when done.
