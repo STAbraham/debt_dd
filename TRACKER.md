@@ -1,6 +1,6 @@
 # Diligence Tracker
 
-**Status:** v14 — all 14 initial-doc items closed. Live work is the 8/26 email batch, now items 6–13: Drafted 6.1, 6.2, 7, 9.1–9.3, 12.1, 13.2 · Open 8, 10, 11, 12.2, 13.1, 13.3. Installment Funds Flow diagram staged in Data Room / Product (Box upload pending).
+**Status:** v16 — all 14 initial-doc items closed. Live work is the 8/26 email batch, now items 6–13: Drafted 6.1, 6.2, 7, 9.1–9.3, 12.1, 13.2 · Open 8, 10, 11, 12.2, 13.1, 13.3. Installment Funds Flow diagram staged in Data Room / Product (Box upload pending).
 **This file is the source of truth.** The outbound spreadsheet is generated from it via `scripts/export_responses.py`; Steve reviews in `WORKING - Diligence Responses.xlsx`. Lines marked `**Note (internal):**` are never exported.
 **ID convention:** one running scheme across all batches. The initial doc's five sections became 1.1–5.3. In later fund emails, each bullet takes the next top-level number (8/26 email bullets 1–8 → items 6–13); a bullet containing several distinct questions splits into .1/.2/.3 sub-items. Questions are quoted **verbatim** from the fund's email, keeping the fund's own bullet number at the start of the text ("8 (cont.):" marks the continuation of a split bullet) — so the sheet maps 1:1 to their email while our IDs stay unambiguous against earlier references like 1.2. IDs never change once a response sheet containing them has been sent.
 
@@ -133,24 +133,27 @@ Early termination: a cancellation fee equal to the current statement cycle's int
 
 ### 6.2 Installment purchase — flow of funds [Drafted]
 **Q:** 1 (cont.): Plus the flow of funds: who pays whom, when, and which entity each flow lands in.
-**A:** See the Installment Funds Flow diagram in Data Room / Product. In short: at purchase, Zed funds the merchant T+1 through Mastercard from its own balance sheet (we have no bank funding partner) and earns interchange; every flow after that is between the customer and Zed — the upfront fee and the first 1/X billing land on the enrollment-cycle statement, and each statement's installment billing converts back to revolving balance and must be paid in full by that cycle's due date under our Minimum Payment Due rules.
+**A:** See the Installment Funds Flow diagram in Data Room / Product.
 **Note (internal):** Fund email 2026-08-26, bullet 1 (flow-of-funds half). Resolved 2026-09-02 by the diagram, built collaboratively with Steve; his confirmations: first 1/X bills in the enrollment cycle alongside the fee; monthly billing = 1/X + 1% add-on; single-entity issuer funded off Zed's own balance sheet, no bank partner; acquirer collapsed into the network rail; early termination as footnote only. PDF not yet uploaded to Box — SHARED-LOG row waits for Steve's confirmation.
 
 ### 7 Revolver and pay-in-full — economics walkthrough [Drafted]
 **Q:** 2. Do the same walkthrough for a revolving balance and for a pay-in-full statement, so we can see how the three products differ economically.
-**A:** Just to clarify: today, "pay in full" and "revolving" are two payment behaviors on the same card rather than separate products. Paying in full was the required dynamic of our original charge card, which we have since retired. We launched revolving on May 25th; the first statements carrying a Minimum Payment Due below the statement ending balance were generated June 1, and the second and final cohort of users still on the charge-card dynamic (where the MPD equaled the statement ending balance) transitioned on June 15. Since then, our entire customer base is on the revolving product. Cardholders can of course still choose to pay their balance in full each cycle to avoid interest — like any credit card — it's simply no longer required. So the walkthrough below covers one card product (a revolving credit card with an installment feature) in its different payment modes.
+**A:** Just to clarify: today, "pay in full" and "revolving" are two payment behaviors on the same card rather than separate products. Paying in full was the required dynamic of our original charge card, which we have since retired. We launched revolving on May 25th; the first statements carrying a Minimum Payment Due below the statement ending balance were generated June 1, and the second and final cohort of users still on the charge-card dynamic (where the MPD equaled the statement ending balance) transitioned on June 15. Since then, our entire customer base is on the revolving product. Cardholders can of course still choose to pay their balance in full each cycle to avoid interest — like any credit card — but it's no longer required. So the walkthrough below covers our sole card product, a revolving credit card with an installment feature.
 
 Interchange: as in 6.1, every purchase earns Zed interchange at the swipe — payment behavior plays out afterwards and never changes the transaction-level economics.
 
-How revolving works, from first principles:
-
+How revolving works
 Statement cycle: purchases post to the balance through the cycle; at cycle close we generate a statement fixing the statement balance, the Minimum Payment Due (formula per our response to 1.2 — in short, 100% of billed installment amounts, late fees and past-due amounts, plus 10% of the remaining statement balance, floored at ₱1,000), and the payment due date.
 
-Grace period — the pay-in-full behavior: if the cardholder paid the prior statement in full, no interest accrues on purchases through the due date. A cardholder who pays the statement balance in full by the due date every cycle never pays interest; Zed's economics on these users are interchange only.
+Grace period: if the cardholder paid the prior statement in full, no interest accrues on purchases through the due date. A cardholder who pays the statement balance in full by the due date every cycle never pays interest; Zed's economics on these users are interchange only.
 
-Losing the grace period: paying anything less than the full statement balance by the due date — even well above the MPD — ends the grace period. From that point interest accrues daily on the unpaid balance starting from the statement cut-off date (day 1 of interest is the statement day itself), and the accrued interest is billed on the next statement.
+Losing the grace period: paying anything less than the full statement balance by the due date — even well above the MPD — loses the grace period.
 
-How interest is computed: 3% per month, accrued daily at 0.1%/day on the adjusted daily balance (we use the 30-day banking standard for the daily rate, so a 31-day month accrues 3.1% and a 28-day month 2.8%). Payments reduce the accruing balance the day they post. Example: a cardholder who has lost their grace period carries a ₱1,000 statement balance; they pay ₱250 on day 11 and nothing else; interest accrues on ₱1,000 for days 1–10 and on ₱750 for days 11–30, and the summed daily interest is billed on the next statement.
+What interest is charged on: only balances that have been billed on a statement. Purchases made during the current cycle have not been billed yet, so they accrue no interest while the cycle is running — they become interest-bearing only once they appear on a statement that then isn't paid in full.
+
+When interest starts: on the statement day, not the due date. For a cardholder who has already lost their grace period, each statement's unpaid balance starts accruing daily interest from the day the statement is generated. Just as important: in the very cycle where the grace period is lost, interest is applied back to the last statement day — a cardholder who pays less than the full balance at the due date is charged daily interest counted from the day that statement was generated, not from the day they underpaid.
+
+How the daily math works: 3% per month is applied as 0.1% per day (30-day banking standard, so a 31-day month accrues 3.1% and a 28-day month 2.8%) on each day's outstanding billed balance, and payments reduce that balance the day they post. Example: a cardholder who has lost their grace period carries a ₱1,000 statement balance and pays ₱250 on day 11; interest accrues on ₱1,000 for days 1–10 and on ₱750 for days 11–30, and the summed daily interest is billed on the next statement.
 
 Residual interest: once the grace period is lost, paying the balance in full mid-cycle stops accrual going forward, but the interest already accrued for the days the balance existed still bills on the following statement.
 
