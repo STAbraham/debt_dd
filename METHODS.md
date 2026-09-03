@@ -15,6 +15,14 @@
 **Caveats:** Verified against the shared extract, not the warehouse; the peso upfront-fee amount sits in a second, unlabeled duplicate column (e.g. ‑82.35 = 5,490 × 1.5%) charged in plan month 1.
 **Reviewed by:** pending Steve.
 
+## 2026-09-02 — Installment Funds Flow diagram (produced artifact; answers the flow-of-funds half of 8/26 items 1–2)
+
+**Artifact:** `Data Room/Product/Installment Funds Flow_20260902.pdf` (2 pages: swimlane diagram + cash summary). Source of truth for regeneration: HTML in the session scratchpad (`funds-flow-item1-print.html`), rendered via headless Chrome print-to-PDF.
+**Content basis:** Steve's walkthroughs in this session and the working sheet — post-purchase Pay-Over-Time-style enrollment, four-party purchase flow (swipe at merchant → auth via Mastercard → Zed approves → T+1 settlement), MPD includes the full installment billing, revolving-interest accrual on billed installments for revolvers. Steve's explicit confirmations: first 1/X bills on the enrollment-cycle statement alongside the upfront fee; monthly billing = 1/X principal + 1% add-on; Zed is a single issuing entity funding settlement from its own balance sheet (no bank funding partner); acquirer collapsed into the Mastercard rail; early termination footnote only.
+**Numbers:** worked example ₱12,000 × 6 months — fee/interest rates from the 2026-09-01 installment-tape verification (entry above): 3% upfront (₱360), 1%/mo add-on (₱120), totals ₱2,480 first statement, 5 × ₱2,120, ₱13,080 collected (9.0% finance charge). Revolving 3%/mo and DPD-1 freeze per 1.2/1.4 as sent.
+**Caveats:** T+1 settlement timing and "net of MDR / net of interchange" framing are Steve's description, not independently verified. Not yet uploaded to Box — SHARED-LOG row pending Steve's confirmation.
+**Reviewed by:** Steve (iterated live in this session; content approved before PDF render).
+
 ## Open verification (started, not finished)
 
 - **8/26 item 3 — what the statement tape's "Installment Fees" column contains** (upfront only vs upfront + monthly add-on): plan-to-statement trace was queued when the 2026-09-01 session paused; per Steve, use BigQuery as the source of truth and/or confirm with whoever built the extract. Record the result here when done.
