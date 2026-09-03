@@ -1,11 +1,10 @@
 # Diligence Tracker
 
-**Status:** v15 — all 14 initial-doc items closed. Live work is the 8/26 email batch, now items 6–13: Drafted 6.1, 6.2, 7, 9.1–9.3, 12.1, 13.2 · Open 8, 10, 11, 12.2, 13.1, 13.3. Installment Funds Flow diagram staged in Data Room / Product (Box upload pending).
+**Status:** v14 — all 14 initial-doc items closed. Live work is the 8/26 email batch, now items 6–13: Drafted 6.1, 6.2, 7, 9.1–9.3, 12.1, 13.2 · Open 8, 10, 11, 12.2, 13.1, 13.3. Installment Funds Flow diagram staged in Data Room / Product (Box upload pending).
 **This file is the source of truth.** The outbound spreadsheet is generated from it via `scripts/export_responses.py`; Steve reviews in `WORKING - Diligence Responses.xlsx`. Lines marked `**Note (internal):**` are never exported.
 **ID convention:** one running scheme across all batches. The initial doc's five sections became 1.1–5.3. In later fund emails, each bullet takes the next top-level number (8/26 email bullets 1–8 → items 6–13); a bullet containing several distinct questions splits into .1/.2/.3 sub-items. Questions are quoted **verbatim** from the fund's email, keeping the fund's own bullet number at the start of the text ("8 (cont.):" marks the continuation of a split bullet) — so the sheet maps 1:1 to their email while our IDs stay unambiguous against earlier references like 1.2. IDs never change once a response sheet containing them has been sent.
 
 **Changelog**
-- **v15 (2026-09-02):** Item 7 interest mechanics rewritten in plain language per Steve: interest is charged only on statement-billed balances (unbilled current-cycle purchases never accrue); interest starts on the statement day, and in the cycle where grace is lost it applies retroactively back to the last statement day; daily-math paragraph and worked example kept.
 - **v14 (2026-09-02):** Item 7 opener set to Steve's phrasing: "Just to clarify:". Skill tone example updated with his calibration ("Just to clarify" / "Wanted to clear up one point").
 - **v13 (2026-09-02):** Item 7 opener recalibrated per Steve — "Happy to walk through this" was too soft; now "To frame this walkthrough:" followed by the facts stated plainly. Skill tone rule updated with the calibrated middle.
 - **v12 (2026-09-02):** Softened item 7's opening per Steve — the premise correction now reads as gracious context-setting ("Happy to walk through this…") rather than a rebuttal; same facts. Tone rule added to the skill: correct fund misunderstandings helpfully, confident but never combative.
@@ -149,13 +148,9 @@ Statement cycle: purchases post to the balance through the cycle; at cycle close
 
 Grace period — the pay-in-full behavior: if the cardholder paid the prior statement in full, no interest accrues on purchases through the due date. A cardholder who pays the statement balance in full by the due date every cycle never pays interest; Zed's economics on these users are interchange only.
 
-Losing the grace period: paying anything less than the full statement balance by the due date — even well above the MPD — loses the grace period.
+Losing the grace period: paying anything less than the full statement balance by the due date — even well above the MPD — ends the grace period. From that point interest accrues daily on the unpaid balance starting from the statement cut-off date (day 1 of interest is the statement day itself), and the accrued interest is billed on the next statement.
 
-What interest is charged on: only balances that have been billed on a statement. Purchases made during the current cycle have not been billed yet, so they accrue no interest while the cycle is running — they become interest-bearing only once they appear on a statement that then isn't paid in full.
-
-When interest starts: on the statement day, not the due date. For a cardholder who has already lost their grace period, each statement's unpaid balance starts accruing daily interest from the day the statement is generated. Just as important: in the very cycle where the grace period is lost, interest is applied back to the last statement day — a cardholder who pays less than the full balance at the due date is charged daily interest counted from the day that statement was generated, not from the day they underpaid.
-
-How the daily math works: 3% per month is applied as 0.1% per day (30-day banking standard, so a 31-day month accrues 3.1% and a 28-day month 2.8%) on each day's outstanding billed balance, and payments reduce that balance the day they post. Example: a cardholder who has lost their grace period carries a ₱1,000 statement balance and pays ₱250 on day 11; interest accrues on ₱1,000 for days 1–10 and on ₱750 for days 11–30, and the summed daily interest is billed on the next statement.
+How interest is computed: 3% per month, accrued daily at 0.1%/day on the adjusted daily balance (we use the 30-day banking standard for the daily rate, so a 31-day month accrues 3.1% and a 28-day month 2.8%). Payments reduce the accruing balance the day they post. Example: a cardholder who has lost their grace period carries a ₱1,000 statement balance; they pay ₱250 on day 11 and nothing else; interest accrues on ₱1,000 for days 1–10 and on ₱750 for days 11–30, and the summed daily interest is billed on the next statement.
 
 Residual interest: once the grace period is lost, paying the balance in full mid-cycle stops accrual going forward, but the interest already accrued for the days the balance existed still bills on the following statement.
 
