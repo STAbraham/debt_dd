@@ -73,28 +73,39 @@ def main():
         if it["status"] == "Approved":
             it["status"] = "Closed"
 
+    # one tab per request batch: the initial doc (sections 1-5), then each follow-up email
+    initial = [it for it in items if not it["section"].startswith("Follow-up")]
+    followup = [it for it in items if it["section"].startswith("Follow-up")]
+
+    def write_tab(wb, title, banner, tab_items, first=False):
+        ws = wb.active if first else wb.create_sheet()
+        ws.title = title
+        ws.append([banner])
+        ws["A1"].font = Font(bold=True, size=14)
+        headers = ["ID", "Section", "Topic", "Diligence question / request", "Status", "Response / evidence"]
+        ws.append(headers)
+        for c in ws[2]:
+            c.font = Font(bold=True)
+        for it in tab_items:
+            ws.append([it["id"], it["section"], it["topic"], it["q"], it["status"], it["a"]])
+        widths = [8, 30, 28, 60, 10, 80]
+        for i, w in enumerate(widths, 1):
+            ws.column_dimensions[get_column_letter(i)].width = w
+        wrap = Alignment(wrap_text=True, vertical="top")
+        for row in ws.iter_rows(min_row=3):
+            for c in row:
+                c.alignment = wrap
+        ws.freeze_panes = "A3"
+
     wb = Workbook()
-    ws = wb.active
-    ws.title = "Diligence Tracker"
-    ws.append(["Diligence Questions"])
-    ws["A1"].font = Font(bold=True, size=14)
-    headers = ["ID", "Section", "Topic", "Diligence question / request", "Status", "Response / evidence"]
-    ws.append(headers)
-    for c in ws[2]:
-        c.font = Font(bold=True)
-    for it in items:
-        ws.append([it["id"], it["section"], it["topic"], it["q"], it["status"], it["a"]])
-    widths = [8, 30, 28, 60, 10, 80]
-    for i, w in enumerate(widths, 1):
-        ws.column_dimensions[get_column_letter(i)].width = w
-    wrap = Alignment(wrap_text=True, vertical="top")
-    for row in ws.iter_rows(min_row=3):
-        for c in row:
-            c.alignment = wrap
+    write_tab(wb, "Initial Questions", "Diligence Questions — initial list (responses sent 2026-08-05)",
+              initial, first=True)
+    write_tab(wb, "Follow-up Questions 8.26", "Follow-up Questions — fund email 2026-08-26 (items 6-13)",
+              followup)
 
     out = ROOT / "Diligence Question Responses" / f"Diligence Responses_{stamp}.xlsx"
     wb.save(out)
-    print(f"Wrote {out.relative_to(ROOT)} ({len(items)} items)")
+    print(f"Wrote {out.relative_to(ROOT)} ({len(initial)} initial + {len(followup)} follow-up items)")
 
 
 if __name__ == "__main__":
