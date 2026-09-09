@@ -14,7 +14,7 @@ from datetime import date
 from pathlib import Path
 
 from openpyxl import Workbook
-from openpyxl.styles import Alignment, Font
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -77,31 +77,66 @@ def main():
     initial = [it for it in items if not it["section"].startswith("Follow-up")]
     followup = [it for it in items if it["section"].startswith("Follow-up")]
 
-    def write_tab(wb, title, banner, tab_items, first=False):
+    # styling copied from the 8/5 sheet the fund already holds
+    NAVY, HDR_BLUE = "FF17365D", "FF5B9BD5"
+    SECT_FILL, RESP_FILL = "FFDDEBF7", "FFFFF2CC"
+    STATUS_FILLS = {"Closed": "FFFCE4D6", "Partial": "FFFCE4D6"}
+    THIN, MEDIUM = Side(style="thin"), Side(style="medium")
+
+    def write_tab(wb, title, banner, tab_items, group_of, section_label, first=False):
         ws = wb.active if first else wb.create_sheet()
         ws.title = title
         ws.append([banner])
-        ws["A1"].font = Font(bold=True, size=14)
+        ws.merge_cells("A1:F1")
+        ws["A1"].font = Font(name="Calibri", bold=True, size=18, color="FFFFFFFF")
+        ws["A1"].fill = PatternFill("solid", fgColor=NAVY)
+        ws["A1"].alignment = Alignment(horizontal="left", vertical="center")
+        ws.row_dimensions[1].height = 30
+        ws.append([])
         headers = ["ID", "Section", "Topic", "Diligence question / request", "Status", "Response / evidence"]
         ws.append(headers)
-        for c in ws[2]:
-            c.font = Font(bold=True)
+        for c in ws[3]:
+            c.font = Font(name="Calibri", bold=True, size=11, color="FFFFFFFF")
+            c.fill = PatternFill("solid", fgColor=HDR_BLUE)
+            c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+            c.border = Border(bottom=THIN)
+        ws.row_dimensions[3].height = 24
+
+        top_wrap = Alignment(vertical="top", wrap_text=True)
+        prev_group = None
         for it in tab_items:
-            ws.append([it["id"], it["section"], it["topic"], it["q"], it["status"], it["a"]])
-        widths = [8, 30, 28, 60, 10, 80]
+            new_group = group_of(it) != prev_group
+            prev_group = group_of(it)
+            r = ws.max_row + 1
+            vals = [it["id"], section_label(it), it["topic"], it["q"], it["status"], it["a"]]
+            fonts = [Font(name="Calibri", size=10, bold=True, color="FF666666"),
+                     Font(name="Calibri", size=10, bold=True, color=NAVY),
+                     Font(name="Calibri", size=10, bold=True, color="FF000000"),
+                     Font(name="Calibri", size=10, color="FF0000FF"),
+                     Font(name="Calibri", size=10, color="FF000000"),
+                     Font(name="Calibri", size=10, color="FF000000")]
+            fills = ["FFFFFFFF", SECT_FILL, "FFFFFFFF", "FFFFFFFF",
+                     STATUS_FILLS.get(it["status"], "FFEDEDED"), RESP_FILL]
+            aligns = [Alignment(horizontal="center", vertical="top"), top_wrap, top_wrap, top_wrap,
+                      Alignment(horizontal="center", vertical="center", wrap_text=True), top_wrap]
+            for ci, (v, fo, fi, al) in enumerate(zip(vals, fonts, fills, aligns), 1):
+                cell = ws.cell(row=r, column=ci, value=v)
+                cell.font, cell.alignment = fo, al
+                cell.fill = PatternFill("solid", fgColor=fi)
+                cell.border = Border(top=MEDIUM if new_group else None, bottom=THIN)
+
+        widths = [8, 30, 32, 78, 15, 38]
         for i, w in enumerate(widths, 1):
             ws.column_dimensions[get_column_letter(i)].width = w
-        wrap = Alignment(wrap_text=True, vertical="top")
-        for row in ws.iter_rows(min_row=3):
-            for c in row:
-                c.alignment = wrap
-        ws.freeze_panes = "A3"
+        ws.freeze_panes = "A4"
 
     wb = Workbook()
-    write_tab(wb, "Initial Questions", "Diligence Questions — initial list (responses sent 2026-08-05)",
-              initial, first=True)
-    write_tab(wb, "Follow-up Questions 8.26", "Follow-up Questions — fund email 2026-08-26 (items 6-13)",
-              followup)
+    write_tab(wb, "Initial Questions", "Diligence Questions",
+              initial, group_of=lambda it: it["section"], section_label=lambda it: it["section"],
+              first=True)
+    write_tab(wb, "Follow-up Questions 8.26", "Follow-up Questions (email 8/26/2026)",
+              followup, group_of=lambda it: it["id"].split(".")[0],
+              section_label=lambda it: f"Email question {int(it['id'].split('.')[0]) - 5}")
 
     out = ROOT / "Diligence Question Responses" / f"Diligence Responses_{stamp}.xlsx"
     wb.save(out)
