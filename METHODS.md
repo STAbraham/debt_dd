@@ -33,4 +33,4 @@
 
 ## Open verification (started, not finished)
 
-- **8/26 item 3 — what the statement tape's "Installment Fees" column contains** (upfront only vs upfront + monthly add-on): plan-to-statement trace was queued when the 2026-09-01 session paused; per Steve, use BigQuery as the source of truth and/or confirm with whoever built the extract. Record the result here when done.
+- ~~8/26 item 3 (now item 8) — statement tape "Installment Fees" definition~~ **Closed 2026-09-09 without a trace:** Steve answered authoritatively in the working sheet — the field contains upfront fees + termination fees (final-cycle interest classified as a fee in the ledger); monthly add-on interest is not included.
