@@ -31,6 +31,14 @@
 **Implication:** Item 11's numerator must come from i2c/Mastercard settlement reporting or finance records; BQ can only supply the GMV denominator once the base is defined.
 **Reviewed by:** pending Steve.
 
+## 2026-09-11 — i2c network transaction counts by month (produced artifact)
+
+**Artifact:** `Analyses (internal)/i2c Network Transactions by Month_20260911.xlsx` — monthly table + line chart of PIN POS & ATM (MCREE00007G) + Signature (MCREE00007A) transaction counts, per Steve's request.
+**Source:** the 10 monthly i2c Processing Services invoices Sep 2025 – Jun 2026 (`inbox/processed/i2c invoices/`), text-extracted with pdftotext and parsed on the two billing codes; quantities and dollar amounts both captured, sum = count of the two lines.
+**Figures (total counts):** Sep 80,260 · Oct 87,920 · Nov 103,412 · Dec 112,475 · Jan 93,874 · Feb 105,534 · Mar 150,821 · Apr 179,144 · May 201,921 · Jun 221,364. PIN POS & ATM is negligible throughout (3–22/month); the series is effectively Signature volume.
+**Caveats:** counts are i2c-billed network transactions (auth-level billing units), not settled purchase counts — don't equate to GMV transaction counts without checking i2c's billing definition. Not shared with the fund; internal only unless Steve routes it.
+**Reviewed by:** pending Steve.
+
 ## Open verification (started, not finished)
 
 - ~~8/26 item 3 (now item 8) — statement tape "Installment Fees" definition~~ **Closed 2026-09-09 without a trace:** Steve answered authoritatively in the working sheet — the field contains upfront fees + termination fees (final-cycle interest classified as a fee in the ledger); monthly add-on interest is not included.
