@@ -29,7 +29,7 @@ Workspace for responding to debt-facility due diligence from credit funds. The `
 ## Who owes what (keep current)
 
 - **FPF (Raymond):** indicative terms (committed on the 2026-08-12 call) + review of the 9/09 response sheet; Steve offered a call Tue/Wed 9/15–16.
-- **Zed:** nothing owed to FPF as of 2026-09-11 (all 28 responses delivered; funds-flow diagram live in Box / Product). Accial: confirm state of the Aug 11–19 Carrie exchange and decide next move (see `Analyses (internal)/Debt Fundraising CRM.xlsx`).
+- **Zed:** nothing owed to FPF as of 2026-09-11 (all 28 responses delivered; funds-flow diagram live in Box / Product). Accial: confirm state of the Aug 11–19 Carrie exchange and decide next move (CRM: `Analyses (internal)/Debt Fundraising CRM.xlsx` — Harrison-intro pipeline only: FPF + Accial).
 
 ## Sensitivity
 
