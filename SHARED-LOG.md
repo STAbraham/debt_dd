@@ -4,6 +4,8 @@ One line per artifact per share event, newest first. **Channel** is `Data Room /
 
 | Date shared | Artifact | Channel | Tracker IDs | Notes |
 |---|---|---|---|---|
+| 2026-09-11 | Diligence Responses_20260909.xlsx | Email | 6.1–13.3 (+1.1–5.3 restated) | Two-tab sheet (Initial + Follow-up 8.26) attached to Steve's reply on the "Zed & FPF" thread; call offered Tue/Wed. Note: 13.2 went out labeled "Drafted" in the Status column. |
+| 2026-09-11 | Installment Funds Flow_20260902.pdf | Data Room / Product | 6.2, 7 | Steve's email: "uploaded a new folder into the data room called 'Product' that includes the requested funds flow diagram." Box upload confirmed. |
 | 2026-08-21 | Installment Tape_20260814.xlsx | Email | 5.2, 2.2 | "Please find the installment details attached… close out the last open item (5.2)" — Steve to Katz. Confirm attachment = data-room copy; if it differs, archive the emailed version in Prior Responses. |
 | 2026-08-11 | Statement tape + "90+ Recovery Summary" tab | Email | 4.2 | Recovery breakdown with trace-back columns; Katz acknowledged same day. **No copy in repo** — Steve to add to Prior Responses. |
 | ~2026-08-14 | Installment Tape_20260814.xlsx | Data Room / Loan Tape | 5.2, 2.2 | Plan-level tape (opt-in date, tenure, fees, termination). Date inferred from filename; also emailed 8/21 (row above). |

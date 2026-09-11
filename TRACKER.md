@@ -1,10 +1,11 @@
 # Diligence Tracker
 
-**Status:** v18 — all 14 initial-doc items closed. Live work is the 8/26 email batch, now items 6–13: Drafted 6.1, 6.2, 7, 9.1–9.3, 12.1, 13.2 · Open 8, 10, 11, 12.2, 13.1, 13.3. Installment Funds Flow diagram staged in Data Room / Product (Box upload pending).
+**Status:** v19 — ALL items closed (initial doc 1.1–5.3 sent 8/5; follow-up batch 6–13 sent 9/11). Funds Flow diagram live in Box Data Room / Product. Awaiting: FPF review, follow-up call (Steve offered Tue/Wed 9/15–16), and FPF's indicative terms.
 **This file is the source of truth.** The outbound spreadsheet is generated from it via `scripts/export_responses.py`; Steve reviews in `WORKING - Diligence Responses.xlsx`. Lines marked `**Note (internal):**` are never exported.
 **ID convention:** one running scheme across all batches. The initial doc's five sections became 1.1–5.3. In later fund emails, each bullet takes the next top-level number (8/26 email bullets 1–8 → items 6–13); a bullet containing several distinct questions splits into .1/.2/.3 sub-items. Questions are quoted **verbatim** from the fund's email, keeping the fund's own bullet number at the start of the text ("8 (cont.):" marks the continuation of a split bullet) — so the sheet maps 1:1 to their email while our IDs stay unambiguous against earlier references like 1.2. IDs never change once a response sheet containing them has been sent.
 
 **Changelog**
+- **v19 (2026-09-11):** SENT — Steve emailed Diligence Responses_20260909.xlsx to Raymond (cc Katz/FPF + Zed team) 2026-09-11 15:35 PT and confirmed the Box "Product" folder upload (funds flow diagram). All batch items 6–13 flipped to Closed with Delivered lines; SHARED-LOG rows added. Note: 13.2 was still labeled Drafted in the sent file's Status column (answer text was complete); cosmetic only. Evidence: Steve's email on the "Zed & FPF" thread (read from Apple Mail during CRM build).
 - **v18 (2026-09-09):** Working-sheet sync — Steve answered/edited 12 items (6.1 interchange-indistinguishability point, 7 comma, 8 installment-fees definition, 9.1–9.3 upfront/termination-fee terminology + prepayment mechanics, 10 fee inventory, 11 net interchange figures, 12.1 CCAP context, 12.2 BSP sensitivity narrative, 13.1 exact 1.82%, 13.3 no-restructure answer). All his-authored items set to Approved (13 of 14); 13.2 remains Drafted pending his OK. Typos fixed and flagged (pruchase→purchase, eligible, spacing). METHODS item-8 trace closed as superseded. Outbound export prepped as Diligence Responses_20260909.xlsx.
 - **v17 (2026-09-03):** Verified per Steve's hunch: interchange revenue does not exist in the BigQuery warehouse (all 62 tables scanned — no interchange/MDR/settlement-fee columns; METHODS.md entry). Item 11's note rewritten: numerator must come from i2c/Mastercard settlement reporting or finance; BQ can only supply the GMV denominator. Question to Steve added on where net interchange is tracked.
 - **v16 (2026-09-03):** Working-sheet sync + restore after the revert episode. Steve's saved edits applied verbatim: 6.2 shortened to the diagram pointer only; item 7 opener tightened ("but it's no longer required", "our sole card product…"), "How revolving works" header, "Grace period:" label. The v15 plain-language interest block restored on top (interest only on statement-billed balances; starts on statement day, retroactive to the last statement day in the cycle grace is lost; 0.1%/day math with worked example) — Steve's edited losing-grace paragraph is subsumed by it. One typo fixed in his text ("—," → "— but"), flagged for review. His sheet as saved is preserved in git (commit before the merge). Regeneration guard added to make_working_sheet.py after his column-E edits were repeatedly overwritten: the script now refuses to overwrite a sheet with unsynced edits or one open in Excel.
@@ -124,7 +125,7 @@ Installment loans and associated terms do not exist indepedently of the credit c
 
 ## 6. Follow-up questions (fund email 2026-08-26 — bullets 1–8 → items 6–13; multi-part bullets split as .1/.2/.3)
 
-### 6.1 Installment purchase — economics walkthrough [Approved]
+### 6.1 Installment purchase — economics walkthrough [Closed]
 **Q:** 1. Could you walk us through the economics of a typical installment purchase, from the swipe through to final payment? We're mainly after the revenue lines and their timing: what you earn on the transaction itself (interchange, net of network and processor costs), what's charged upfront at origination, and what accrues over the term.
 **A:** At the swipe, Zed earns interchange on these purchases like any other purchase (net interchange economics covered in 11). In fact, because purchases are enrolled in installments post purchase, there is no way to distinguish purchases that will ultimately be enrolled in installments and those that won't at the time of the swipe. Our installment feature works much like AmEx's "Pay Over Time": after a purchase, certain transactions are eligible for installment enrollment and a purchase is only eligible during the statement cycle in which it was made. If the user enrolls an eligible purchase into installments, the dynamics below follow.
 
@@ -133,14 +134,16 @@ Upon enrollment: an upfront fee of 0.5% × term months (1.5% / 3% / 6% for the 3
 Over the term: add-on interest of 1% × original principal is billed on each monthly statement — so by end of term, total interest of 3% / 6% / 12% of principal has been charged for the 3 / 6 / 12-month terms, respectively.
 
 Early termination: a cancellation fee equal to the current statement cycle's interest is charged and the upfront fee is retained, with one exception — if a purchase is enrolled into installments and cancelled within that same first statement cycle, we charge no interest and reverse the upfront fee. Nothing has been billed at that point and the user hasn't yet floated any of the purchase via installments, so we treat it as a foot fault and allow them to unwind the enrollment without any implications.
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 1 (economics half; flow of funds split to 6.2). Steve's own explanation (working-sheet syncs 2026-09-01/02), restructured per his notes: enrollment is post-purchase (AmEx Pay-Over-Time-style) — at swipe there is no installment attribute, and eligibility lasts only for the purchase's statement cycle. Fee mechanics verified against the installment tape (see METHODS.md).
 
-### 6.2 Installment purchase — flow of funds [Approved]
+### 6.2 Installment purchase — flow of funds [Closed]
 **Q:** 1 (cont.): Plus the flow of funds: who pays whom, when, and which entity each flow lands in.
 **A:** See the Installment Funds Flow diagram in Data Room / Product.
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 1 (flow-of-funds half). Resolved 2026-09-02 by the diagram, built collaboratively with Steve; his confirmations: first 1/X bills in the enrollment cycle alongside the fee; monthly billing = 1/X + 1% add-on; single-entity issuer funded off Zed's own balance sheet, no bank partner; acquirer collapsed into the network rail; early termination as footnote only. PDF not yet uploaded to Box — SHARED-LOG row waits for Steve's confirmation.
 
-### 7 Revolver and pay-in-full — economics walkthrough [Approved]
+### 7 Revolver and pay-in-full — economics walkthrough [Closed]
 **Q:** 2. Do the same walkthrough for a revolving balance and for a pay-in-full statement, so we can see how the three products differ economically.
 **A:** Just to clarify: today, "pay in full" and "revolving" are two payment behaviors on the same card rather than separate products. Paying in full was the required dynamic of our original charge card, which we have since retired. We launched revolving on May 25th; the first statements carrying a Minimum Payment Due below the statement ending balance were generated June 1, and the second and final cohort of users still on the charge-card dynamic (where the MPD equaled the statement ending balance) transitioned on June 15. Since then, our entire customer base is on the revolving product. Cardholders can of course still choose to pay their balance in full each cycle to avoid interest — like any credit card — but it's no longer required. So the walkthrough below covers our sole card product, a revolving credit card with an installment feature.
 
@@ -168,63 +171,75 @@ Missed payment: if the MPD is not met by the due date, the account is past due a
 Installment interaction, for completeness: billed installment amounts accrue no interest for cardholders whose grace period is intact; once the grace period is lost, they accrue daily interest from the statement date until paid — consistent with the billed-installment-converts-to-revolving mechanics in 6.1/6.2.
 
 Flow of funds: the purchase-side flow (merchant settlement, interchange, Zed funding from its own balance sheet) is identical for all payment behaviors — see the Installment Funds Flow diagram in Data Room / Product, Part 1. For revolvers and full payers, everything after settlement is simply the customer paying Zed against the monthly statement.
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 2. Rewritten 2026-09-02 per Steve: FPF appeared to assume pay-in-full is a separate SKU — the correction (charge card deprecated; June 1 / June 15 transition; 100% on revolving) leads the answer and matches 1.1 as sent. Revolving mechanics sourced from the internal "Revolving Credit Card Support Guide" (Notion / Customer Success, last edited 2026-08-13): grace-period loss/regain, daily 0.1% adjusted-daily-balance accrual from statement cut-off, residual interest, ₱1,000 late payment penalty. Flags: (a) the ₱1,000 late penalty was not in any sent response and is distinct from 1.2's ₱1,000 MPD floor — don't conflate; (b) penalty timing confirmed 2026-09-02 from the i2c program config (Zed_Card_NNB, Credit Card Rules → Statement, screenshot from Steve): Late Payment Grace Period = 2 days after the due date — resolves the guide's "timing pending"; the i2c Delinquency Grace Period field appears unset, consistent with freeze at DPD 1; (c) 1.2-sent line "only charges after revolving launched were able to revolve" is superseded by the fuller transition narrative — consistent, since pre-transition statements required full payment. Call-context figures (33%/7%/10% mix) still unverified — keep out of written responses. Flow-of-funds gap resolved via the same diagram as 6.2.
 
-### 8 "Installment fees" field definition [Approved]
+### 8 "Installment fees" field definition [Closed]
 **Q:** 3. Define what the "installment fees" field in the tape contains: the upfront origination fee, the monthly add-on interest, or both combined.
 **A:** Installment fees in the tape include upfront fees and the "termination fee". Just to reiterate, to the user, "termination fees" are actually just an accelerated billing of the final (i.e. cancellation cycle's) interest. They don't see it as a "termination fee", but rather final period interest. Unfortunately, per our ledger/system of record, we have to classify these as fees rather than interest. You should find even more detail about the installment charges in the installment tape that we provided, where we break out every installment plan and associated fees.
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 3. Answered directly by Steve in the working sheet 2026-09-09: the tape's Installment Fees = upfront fees + termination fees (final-cycle interest, classified as a fee per the ledger); the monthly add-on interest is NOT in that field. Supersedes the planned statement-tape trace — METHODS open item closed.
 
-### 9.1 Fee schedule — rates and formula [Approved]
+### 9.1 Fee schedule — rates and formula [Closed]
 **Q:** 4. Confirm the fee schedule: add-on rate by tenor, and the origination fee formula. We have been told 0.5% × number of months (3% on a 6-month term). Confirm or correct.
 **A:** Confirmed. The upfront fee is 0.5% × term months (1.5% for 3-month, 3% for 6-month, 6% for 12-month terms). The add-on rate is 1% of original principal per month, so by the end of the term, customers will pay 3% for a 3-month, 6% for 6-month, 12% for 12-month terms. The difference is that the upfront fee is billed entirely in the enrollment/first cycle and the add-on rate is billed each cycle of the term at the 1% times original principal amount.
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 4. Verified against all 4,974 plans in `Installment Tape_20260814.xlsx` (see METHODS.md): upfront/principal exactly 0.5% × months; monthly interest/principal exactly 1.0% on 4,897 plans; 77 plans show 0% interest — [Steve: promo plans? worth knowing before the fund asks]. Consistent with the 2.1 response already sent.
 
-### 9.2 Fee schedule — netted vs financed [Approved]
+### 9.2 Fee schedule — netted vs financed [Closed]
 **Q:** 4 (cont.): Is the fee netted from the disbursement or financed into the balance?
 **A:** There is no cash disbursement — an installment plan converts an existing card purchase — so nothing is netted: the upfront fee is charged to the account and billed on the first statement.
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 4. See 9.1's verification note.
 
-### 9.3 Fee schedule — prepayment refund and interest rebate [Approved]
+### 9.3 Fee schedule — prepayment refund and interest rebate [Closed]
 **Q:** 4 (cont.): Is it refundable on prepayment, and is unearned add-on interest rebated?
 **A:** If a plan is terminated in the first month, the upfront fee is reversed and no termination fee applies; after the first month, the upfront fee is retained and a termination fee equal to the current month's interest is charged. Add-on interest is billed monthly only while the plan is active, so unearned interest for remaining months is never charged (no rebate needed). 
 
 Prepayment cannot be done automatically. A user must explicitly end/cancel a plan, all billing of the remaining principal will be accelerated and the termination fee (final period interest) will be applied if it's any cycle other than the enrollment cycle.
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 4. Cancellation mechanics per Steve's 6.1 walkthrough; consistent with the funds-flow diagram footnote.
 
-### 10 Revenue fields absent from the tape [Approved]
+### 10 Revenue fields absent from the tape [Closed]
 **Q:** 5. The tape shows late fees and installment fees but no interchange, no annual fee, no upfront fee, no cash advance fee, etc. Is that because those revenues do not attach to the receivable, or because they were excluded from the extract?
 **A:** Interchange is earned on the merchant/network side of each transaction and never posts to the cardholder account, so it does not appear in a receivables tape. Zed does not charge annual fees nor do we allow cash advances. Late fees, installment enrollment upfront fees and installment termination fees (i.e. final period interest) are the only fees that Zed charges.
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 5. Completed by Steve 2026-09-09: no annual fees, no cash advances; the only cardholder fees are late fees, installment upfront fees, and termination fees (final-period interest).
 
-### 11 Net interchange as % of GMV [Approved]
+### 11 Net interchange as % of GMV [Closed]
 **Q:** 6. What is your net interchange as a percentage of GMV for the last six months (if possible, split domestic vs international)?
 **A:** Blended Average: 1.43%; Domestic: 1.17%; International: 1.84%
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 6. **Interchange revenue is NOT in the warehouse** — verified 2026-09-03 (see METHODS.md): no interchange/MDR/settlement-fee column in any of the 62 tables; `public_transactions` and `public_network_messages` carry only gross transaction amounts. The warehouse mirrors the app DB, and interchange never posts there — it lives in i2c/Mastercard settlement reporting and finance records. Figures supplied directly by Steve 2026-09-09: blended 1.43%, domestic 1.17%, international 1.84% — from settlement/finance records, not the warehouse. [Steve: worth noting the as-of window (last six months per the ask?) if Raymond drills in.]
 
-### 12.1 BSP ceilings — headroom confirmation [Approved]
+### 12.1 BSP ceilings — headroom confirmation [Closed]
 **Q:** 7. Both your revolving rate (3%/month) and installment add-on (1%/month) sit exactly at the BSP ceilings. Confirm there is no pricing headroom.
 **A:** Confirmed — our revolving rate is 3% per month and the installment add-on is 1% per month, at the current BSP ceilings. That being said, Zed, other issuers and the Credit Card Association of the Philippines (CCAP) are all actively involved in discussions with the BSP around the re-evaluation of the current caps.
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 7 (confirmation half). Rates verified (1.2 as sent; installment tape per METHODS.md); on the 8/12 call we already told them "all at regulatory maximums" (3%/mo ≈ 36.5% APR), so "confirmed" is consistent.
 
-### 12.2 BSP ceilings — cut sensitivity [Approved]
+### 12.2 BSP ceilings — cut sensitivity [Closed]
 **Q:** 7 (cont.): …and tell us what happens to program economics if BSP cuts the ceiling at a semiannual review.
 **A:** Preface: it is incredibly unlikely that the BSP will reduce the cap on credit card interest rates further. The BSP has received significant pressure from Banks to raise this cap, which was originally imposed in 2020 as a result of COVID. As a matter of pattern and direction, the BSP most recently increased the cap in 2023 from 2% to the current level of 3% per month. 
 
 Re: the impact of a rate reduction, we previously shared a breakdown of unit economics in response to item 2.3. The Pro Forma column in this file indicates the steady state revenue earned from interest on a per user basis. Even if this revolving interest revenue drops down to zero (i.e. a 0% interest rate), our users are still marginally profitable on the basis of interchange and installment conversions alone. This, of course, assumes no debt expense. So the logical floor of interest rate cap that we could support is almost directly equivalent to our borrowing costs because we're close to breakeven without any interest revenue and no debt financing assumed.
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 7 (sensitivity half). Written by Steve 2026-09-09: BSP direction context (CCAP discussions, 2023 cap raise 2%→3%) plus the unit-econ pro forma argument (profitable at 0% interest excluding debt expense; rate floor ≈ borrowing cost). References the 2.3 unit econ file as sent.
 
-### 13.1 Loss figure — basis and denominator [Approved]
+### 13.1 Loss figure — basis and denominator [Closed]
 **Q:** 8. What's the basis for the ~2% loss figure provided (30+/90+ DPD, annualized NCL, cumulative) and its denominator?
 **A:** The ~2% figure is our headline default metric as discussed on our call: dollars originated that go past due, i.e. past-due originated volume over cumulative originated volume. We manage to a 1–3% target range and are currently at 1.82%, in line with US prime credit card benchmarks.
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 8 (basis half). Grounded in the 8/12 call notes ("dollars originated that go past due; target 1–3%, currently ~2%, in line with US prime benchmarks") — the fund heard this live, so the written answer must match it. Steve set the exact figure at 1.82% and removed the verification placeholder 2026-09-09 — his number stands. Distinct from the unit econ provision line (~49% of gross revenue per active account) — if the fund juxtaposes the two, the reconciliation is originated-volume denominator vs revenue denominator.
 
-### 13.2 Charge-off policy and changes since launch [Drafted]
+### 13.2 Charge-off policy and changes since launch [Closed]
 **Q:** 8 (cont.): We'd also appreciate your charge-off policy in DPD, and any change to it since launch.
 **A:** Per our ECL policy we provision 100% at 180+ DPD; we have not yet formally written off balances while we stand up the collections-substantiation and BIR documentation required, and the policy is unchanged since launch.
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 8 (policy half). Drafted 2026-09-01 from the 8/12 call context; review wording with Steve before approving.
 
-### 13.3 Restructures and re-aging [Approved]
+### 13.3 Restructures and re-aging [Closed]
 **Q:** 8 (cont.): …and your approach to restructures/re-aging.
 **A:** Re-aging to Current requires all arrears cleared. No restructuring plan currently exists. Certain accounts that are >15 DPD are eligible to enroll into a payment plan. Once this plan is completed, though, the accounts are wound down and they cannot continue to be Zed customers.
+**Delivered:** response sheet Diligence Responses_20260909.xlsx, emailed 2026-09-11
 **Note (internal):** Fund email 2026-08-26, bullet 8 (restructures half). Answered by Steve 2026-09-09: no restructure program; >15 DPD accounts may enroll in a payment plan, after which the account is wound down (no continuing customers).
