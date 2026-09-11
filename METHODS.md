@@ -43,9 +43,9 @@
 
 **Artifact:** `Analyses (internal)/Debt Fundraising CRM.xlsx` — Pipeline tab (stage-gated, equity-style; dropdown stages 0–8 + Passed/Dormant), Correspondence Log, Stage Definitions.
 **Source:** Apple Mail local store for steve@zedcard.co (Envelope Index sqlite for thread discovery + .emlx bodies), read with Steve's permission. Swept sender domains on debt keywords and "Zed & X"-pattern intro subjects since mid-2025.
-**In pipeline (per Steve 2026-09-11: Harrison intros only):** FPF (deep diligence) and Accial Capital (first call ~8/10; Aug 11–19 Carrie exchange bodies not downloaded locally — content unconfirmed). Advisor: Tomorrow Capital (Harrison Emmett-Lee — source of both intros). Removed per Steve: LenderLink (credit underwriting service, not a lender — Ces's workstream) and Arc/joinarc (spammy cold outreach).
+**In pipeline (per Steve 2026-09-11: Harrison intros only):** FPF (deep diligence) and Accial Capital (first call 8/10; NDA + term parameters exchanged Aug 11–19 — bodies recovered 2026-09-11 after Steve downloaded the thread). Advisor: Tomorrow Capital (Harrison Emmett-Lee — source of both intros). Removed per Steve: LenderLink (credit underwriting service, not a lender — Ces's workstream) and Arc/joinarc (spammy cold outreach).
 **Excluded as out of scope:** Wells Fargo 2023 (US corporate banking, dormant), BRK Capital (equity), UnionBank (ops banking), Zaidwood + financing-solution.com (broker spam), LenderLink (credit underwriting service), Arc/joinarc (spam), "Additional Capital Issuance" thread (equity legal).
-**Caveats:** three Aug 2026 Accial messages + Fireflies call recap exist server-side only (not in local Mail, Gmail MCP token expired) — CRM carries [confirm] placeholders. Send date/state of FPF verified from Steve's own 9/11 email.
+**Caveats (resolved):** the three Aug 2026 Accial messages were initially server-side only; Steve opened the thread in Mail 2026-09-11 and the bodies were recovered — [confirm] placeholders cleared. Send date/state of FPF verified from Steve's own 9/11 email.
 **Reviewed by:** pending Steve.
 
 ## Open verification (started, not finished)
