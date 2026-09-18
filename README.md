@@ -30,6 +30,7 @@ Workspace for responding to debt-facility due diligence from credit funds. The `
 
 - **FPF (Raymond):** indicative terms or a pass — per the 2026-09-18 call, Raymond has an internal meeting the week of 9/21 and expects to come back with one or the other the week of 9/28.
 - **Zed:** no diligence owed to FPF as of 2026-09-18 (all 28 responses delivered; funds-flow diagram live in Box / Product; 9/18 call raised no new questions). Steve to catch up with Raymond the week of 9/28 after FPF's internal meeting. Accial: confirm state of the Aug 11–19 Carrie exchange and decide next move (CRM: `Analyses (internal)/Debt Fundraising CRM.xlsx` — Harrison-intro pipeline only: FPF + Accial).
+- **Potential next step (parked per Steve 2026-09-18 — do not execute until asked):** updated unit-economics pro forma at a 50% revolving share. The version FPF holds (`Zed Unit Economics_vF.xlsx`, emailed 8/5) assumes 30% revolving, while the target stated on the 9/18 call was a 50/50 revolver/transactor mix; FPF may ask for it if they model off the call.
 
 ## Sensitivity
 
