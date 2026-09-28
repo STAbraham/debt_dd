@@ -51,3 +51,10 @@
 ## Open verification (started, not finished)
 
 - ~~8/26 item 3 (now item 8) — statement tape "Installment Fees" definition~~ **Closed 2026-09-09 without a trace:** Steve answered authoritatively in the working sheet — the field contains upfront fees + termination fees (final-cycle interest classified as a fee in the ledger); monthly add-on interest is not included.
+
+## 2026-09-28 — Facility structure overview (internal working note)
+
+**Artifact:** Google Doc "Zed — Debt Facility Structure: How to Think About It (internal, 2026-09-28)" — https://docs.google.com/document/d/1B2POnzz-62F4MagVNHtErlwWT4Muzwc3a-ahGoZhVxM/edit ; source HTML archived at `Analyses (internal)/Facility Structure - How to Think About It_20260928.html`.
+**Source:** Consolidation of three chat sessions (9/18–9/28) on borrower choice (ZFPI / Delaware parent / new SG SPV), the recourse ladder (true sale → direct ZFPI security → assigned secured intercompany → share pledge), asset-backed vs venture debt, tax map, on/off-balance-sheet and guarantee. Inputs: Raymond's diligence pattern + 8/12 and 9/18 calls; Carrie (Accial) 8/19 structuring email; Steve's entity facts (US parent, no SG entity yet). General knowledge, not legal/tax advice — every rate and rule is marked [verify] for counsel.
+**Not a fund-facing artifact.** Nothing here has been shared.
+**Reviewed by:** pending Steve.
