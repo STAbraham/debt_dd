@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>How Zed Works — Product and Revenue Model</title>
+<style>
+  @page { size: A4; margin: 16mm 16mm 18mm 16mm; }
+  :root { --ink:#0f2a28; --teal:#0b3d3a; --teal-2:#15605a; --coral:#e8613c; --gray:#6b7280; --rule:#d9dedd; --panel:#f3f5f5; --panel-2:#eaf2f1; }
+  html,body { margin:0; padding:0; }
+  body { font-family: -apple-system, "Helvetica Neue", Inter, Arial, sans-serif; color:var(--ink); font-size:9.9pt; line-height:1.4; }
+  .kicker { font-family: "SF Mono", Menlo, Consolas, monospace; font-size:8pt; letter-spacing:.14em; color:var(--teal-2); text-transform:uppercase; }
+  h1 { font-size:22pt; margin:4pt 0 8pt; letter-spacing:-.01em; color:var(--ink); }
+  h2 { font-size:12.5pt; margin:18pt 0 6pt; color:var(--teal); }
+  h3 { font-size:10.5pt; margin:12pt 0 4pt; color:var(--ink); }
+  p { margin:0 0 7pt; }
+  .lede { font-size:10.8pt; color:#2b3a39; }
+  .muted { color:var(--gray); font-size:9pt; }
+  .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10pt; margin:8pt 0 4pt; }
+  .card { background:var(--panel); border-radius:6pt; padding:10pt 12pt; }
+  .card .kicker { margin-bottom:4pt; display:block; }
+  .card p { margin:0 0 5pt; font-size:9.6pt; }
+  .callout { border-left:3pt solid var(--coral); padding:6pt 10pt; margin:8pt 0 10pt; background:#fff7f4; }
+  .callout b { color:var(--ink); }
+  table { width:100%; border-collapse:collapse; margin:6pt 0 10pt; font-size:9.3pt; }
+  th { text-align:left; background:var(--teal); color:#fff; padding:6pt 7pt; font-weight:600; font-size:8.8pt; letter-spacing:.02em; }
+  td { padding:6pt 7pt; border-bottom:1px solid var(--rule); vertical-align:top; }
+  tr:nth-child(even) td { background:#fafbfb; }
+  .step { display:grid; grid-template-columns:22pt 1fr; gap:8pt; margin:0 0 7pt; }
+  .num { width:18pt; height:18pt; border-radius:50%; background:var(--teal); color:#fff; font-size:9pt; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1pt; }
+  .ledger { font-family:"SF Mono", Menlo, Consolas, monospace; font-size:8.6pt; background:#fff; border:1px solid var(--rule); border-radius:4pt; padding:5pt 8pt; display:inline-block; margin-top:3pt; }
+  .step, .callout, .card, tr { page-break-inside: avoid; } h2, h3 { page-break-after: avoid; }
+  .foot { margin-top:14pt; padding-top:6pt; border-top:1px solid var(--rule); font-size:8.3pt; color:var(--gray); }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:14pt; }
+  ul { margin:2pt 0 7pt 16pt; padding:0; } li { margin:0 0 3pt; }
+  .tag { display:inline-block; font-family:"SF Mono", Menlo, monospace; font-size:7.8pt; padding:1pt 5pt; border-radius:3pt; background:var(--panel-2); color:var(--teal); margin-right:4pt; }
+</style></head>
+<body>
+
+<div class="kicker">Zed · Diligence supplement · October 2026</div>
+<h1>How Zed works — product and revenue model</h1>
+<p class="lede">Zed issues one product: a <b>Mastercard revolving credit card</b> with a built-in <b>installment feature</b>, issued and funded by Zed's Philippine entity from its own balance sheet (no bank funding partner). Every cardholder is on this product. Revenue comes from three sources — <b>interchange</b> on every purchase, <b>interest</b> when a cardholder revolves, and <b>installment charges</b> when a cardholder converts a purchase into a fixed-term plan — plus a late-payment penalty. Zed charges no annual fee and does not offer cash advances. This note explains the mechanics end to end and where each peso of revenue arises.</p>
+
+<div class="grid3">
+  <div class="card"><span class="kicker">Interchange</span><p>Earned at the swipe on every purchase, regardless of how the cardholder later pays. Settled on the network side; never posts to the cardholder's account.</p><p class="muted">Net interchange ≈ 1.43% of purchase volume (1.17% domestic / 1.84% international), trailing six months to Sept 2026.</p></div>
+  <div class="card"><span class="kicker">Revolving interest</span><p>3% per month, applied as 0.1% per day on billed balances not paid in full by the due date. Cardholders who pay in full every cycle pay no interest.</p><p class="muted">At the BSP ceiling for card finance charges.</p></div>
+  <div class="card"><span class="kicker">Installment charges</span><p>Upfront fee of 0.5% × term months, billed at enrollment; add-on interest of 1% of original principal per month over the term (3 / 6 / 12 months).</p><p class="muted">Add-on rate at the BSP ceiling.</p></div>
+</div>
+
+<h2>1. The purchase — where interchange is earned</h2>
+<p>A purchase follows the standard four-party card flow. The cardholder swipes at a merchant; the merchant's acquirer routes an authorization to Zed through Mastercard; Zed approves. At settlement (T+1) Zed funds the purchase amount to the network from its own balance sheet, <b>net of interchange</b>, and the merchant receives the amount less its merchant discount rate. On Zed's ledger the cardholder now owes the purchase amount.</p>
+<p>Interchange is therefore earned on <b>every</b> purchase at the moment of settlement. What the cardholder does afterwards — pays in full, revolves, or enrolls the purchase in installments — never changes the transaction-level economics. Because installment enrollment happens after the purchase (see §4), there is no way to distinguish at the swipe a purchase that will later be enrolled from one that will not.</p>
+<p class="muted">Interchange is settled between Zed and the network and does not appear on cardholder statements or in receivables tapes. See <i>Installment Funds Flow</i> (Data Room / Product), Part 1, for the swimlane view.</p>
+
+<h2>2. The statement cycle — the mechanism everything else runs through</h2>
+<div class="step"><div class="num">1</div><div><b>Purchases post</b> to the cardholder's balance through the cycle. Purchases made during the current cycle have not yet been billed and accrue no interest while the cycle is running.</div></div>
+<div class="step"><div class="num">2</div><div><b>Statement generated</b> at cycle close. It fixes the <b>statement balance</b>, the <b>Minimum Payment Due (MPD)</b> and the <b>payment due date</b>.<br><span class="ledger">MPD = max( 10% × (statement balance − late fees − past-due amount − installment billings) + late fees + past-due amount + installment billings , ₱1,000 )</span><br><span class="muted">In words: 100% of any late fees, past-due amounts and billed installment amounts, plus 10% of the remaining statement balance, floored at ₱1,000.</span></div></div>
+<div class="step"><div class="num">3</div><div><b>Cardholder pays</b> by the due date. What they pay — the full statement balance, something between the MPD and the full balance, or less than the MPD — determines the economics below.</div></div>
+
+<h2>3. Payment behavior — pay in full vs revolve</h2>
+<p>Paying in full and revolving are two behaviors on the same card, not separate products. The cardholder chooses each cycle.</p>
+
+<h3>3a. Pay in full → interchange only</h3>
+<p><b>Grace period.</b> A cardholder who paid the prior statement in full owes no interest on purchases through the current due date. One who pays the statement balance in full by the due date every cycle never pays interest; Zed's revenue on that cardholder is interchange alone.</p>
+
+<h3>3b. Revolve → 3% per month on billed balances</h3>
+<ul>
+<li><b>Losing the grace period.</b> Paying anything less than the full statement balance by the due date — even well above the MPD — loses the grace period.</li>
+<li><b>What accrues interest.</b> Only balances that have been <i>billed</i> on a statement. Current-cycle purchases are not yet billed and do not accrue; they become interest-bearing only once they appear on a statement that is then not paid in full.</li>
+<li><b>When interest starts.</b> On the statement day, not the due date. For a cardholder who has already lost the grace period, each statement's unpaid balance accrues from the day the statement is generated. In the cycle in which the grace period is first lost, interest is applied back to that statement day — the cardholder who underpays at the due date is charged daily interest counted from statement generation, not from the day of the underpayment.</li>
+<li><b>Daily math.</b> 3% per month is applied as <b>0.1% per day</b> (30-day banking convention: a 31-day month accrues 3.1%, a 28-day month 2.8%) on each day's outstanding billed balance; payments reduce the balance the day they post. The summed daily interest bills on the next statement.</li>
+<li><b>Residual interest.</b> Once the grace period is lost, paying in full mid-cycle stops accrual going forward, but interest already accrued for the days the balance existed still bills on the following statement.</li>
+<li><b>Regaining the grace period.</b> Pay the total balance in full by the due date; the grace period resumes from the following cycle.</li>
+</ul>
+<div class="callout"><b>Worked example.</b> A cardholder who has lost the grace period carries a ₱1,000 statement balance and pays ₱250 on day 11 of a 30-day cycle. Interest accrues on ₱1,000 for days 1–10 (₱10.00) and on ₱750 for days 11–30 (₱15.00); ₱25.00 is billed on the next statement.</div>
+
+<h2>4. The installment feature — post-purchase conversion of a card purchase</h2>
+<p>Installments are not a separate loan product. A plan converts an <b>existing card purchase</b> into a fixed-term schedule — in the style of AmEx "Pay Over Time" — so there is no cash disbursement, nothing is netted at origination, and installment balances exist only inside the card account. Plans are billed on the card statement and governed by the card's MPD; it is not possible to be delinquent on an installment independently of the card.</p>
+
+<div class="step"><div class="num">1</div><div><b>Enrollment — optional, only within the purchase's statement cycle.</b> After a purchase posts, the cardholder may enroll it in a 3-, 6- or 12-month plan, but only during the statement cycle in which the purchase was made. The purchase amount is reclassified from purchase balance to installment balance.</div></div>
+<div class="step"><div class="num">2</div><div><b>Upfront fee, billed in the enrollment cycle.</b> 0.5% × term months — <b>1.5% / 3% / 6%</b> for 3 / 6 / 12 months — charged to the account and billed in full on the enrollment-cycle statement.</div></div>
+<div class="step"><div class="num">3</div><div><b>Monthly billing over the term.</b> Each statement bills <b>1/X of the original principal plus add-on interest of 1% of the original principal</b>. The first 1/X lands on the enrollment-cycle statement itself, alongside the upfront fee. Over the term, total add-on interest is 3% / 6% / 12% of principal for 3 / 6 / 12 months.</div></div>
+<div class="step"><div class="num">4</div><div><b>Billed amounts convert to revolving balance and sit inside the MPD.</b> Once billed, the installment amount is part of the statement balance like any other charge, and the MPD formula includes <b>100% of it</b>. The cardholder must pay at least the full installment billing (plus that cycle's add-on interest) by the due date — a billed installment cannot be re-revolved past its own cycle. For a cardholder whose grace period is intact, billed installment amounts accrue no interest; for one who has lost it, they accrue the daily 0.1% from statement date until paid, like any other billed balance.</div></div>
+<div class="step"><div class="num">5</div><div><b>End of term.</b> After X statements the installment balance is zero.</div></div>
+
+<div class="callout"><b>Worked example — ₱12,000 purchase enrolled in a 6-month plan.</b> Enrollment-cycle statement bills ₱2,480: ₱360 upfront fee (3%) + ₱2,000 principal (1/6) + ₱120 add-on (1%). Each of the next five statements bills ₱2,120. Total collected ₱13,080 = ₱12,000 principal + ₱1,080 finance charge (9.0% of principal: 3% upfront + 6 × 1% add-on). Full swimlane in <i>Installment Funds Flow</i>, Data Room / Product.</div>
+
+<h3>Early termination and prepayment</h3>
+<ul>
+<li><b>Cancelled within the enrollment cycle:</b> the plan unwinds — the upfront fee is reversed and no interest is charged. Nothing has yet been billed and the cardholder has not floated any of the purchase, so it is treated as a foot fault.</li>
+<li><b>Cancelled in any later cycle:</b> the upfront fee is retained and a termination fee equal to the current cycle's add-on interest is charged; remaining principal is accelerated into the revolving balance and billed. Add-on interest for the remaining months is never charged, so no rebate arises.</li>
+<li><b>Prepayment is not automatic.</b> A cardholder must explicitly end a plan; the mechanics above then apply. Cancellations also include past-due-related accelerations.</li>
+<li class="muted">Ledger note: termination fees are classified as fees in Zed's system of record although economically they are the final cycle's interest; the "installment fees" field in the statement tape therefore contains upfront fees and termination fees, not the monthly add-on.</li>
+</ul>
+
+<h2>5. Delinquency and provisioning</h2>
+<ul>
+<li>If the MPD is not met by the due date the account is past due and a <b>hard card freeze applies at DPD 1</b>. Zed reserves the right to collect the entire balance.</li>
+<li>A <b>₱1,000 late-payment penalty</b> is charged if payment has not been made within the 2-day late-payment grace period after the due date. Interest continues to accrue on the unpaid balance while delinquent, and the past-due amount includes accrued finance charges.</li>
+<li>Re-aging to Current requires all arrears to be cleared. There is no restructuring or re-aging programme.</li>
+<li>Provisioning uses a single Net Flow Rate methodology across all balances, segmented by days past due (eight buckets, Current through 181+) rather than by product — revolving and installment balances flow through the same buckets because they are one product.</li>
+</ul>
+
+<h2 style="page-break-before:always;margin-top:0">6. Revenue summary — what Zed earns, when, and where it shows</h2>
+<table>
+<tr><th>Stream</th><th>Trigger</th><th>Rate / amount</th><th>When billed or earned</th><th>Where it appears</th></tr>
+<tr><td><b>Interchange</b></td><td>Every purchase settlement</td><td>≈ 1.43% net of volume (1.17% domestic / 1.84% international, trailing 6 months)</td><td>T+1, netted from Zed's settlement funding</td><td>Network settlement reporting; not on cardholder statements or receivables tapes</td></tr>
+<tr><td><b>Revolving interest</b></td><td>Statement balance not paid in full by the due date</td><td>3% / month as 0.1% / day on billed balances</td><td>Accrues daily from the statement date; bills on the next statement</td><td>Statement tape — interest</td></tr>
+<tr><td><b>Installment upfront fee</b></td><td>Enrollment of a purchase in a plan</td><td>0.5% × term months (1.5% / 3% / 6%)</td><td>Enrollment-cycle statement, in full</td><td>Statement tape — installment fees; installment tape</td></tr>
+<tr><td><b>Installment add-on interest</b></td><td>Each cycle of an active plan</td><td>1% of original principal per month (3% / 6% / 12% over the term)</td><td>Each statement over the term</td><td>Statement tape — installment charges; installment tape</td></tr>
+<tr><td><b>Installment termination fee</b></td><td>Plan cancelled after the enrollment cycle</td><td>Equal to the current cycle's add-on interest</td><td>Cancellation-cycle statement</td><td>Statement tape — installment fees (classified as a fee)</td></tr>
+<tr><td><b>Late-payment penalty</b></td><td>MPD unpaid 2 days after the due date</td><td>₱1,000</td><td>Next statement</td><td>Statement tape — late fees</td></tr>
+<tr><td class="muted">Not charged</td><td class="muted" colspan="4">No annual fee; cash advances are not offered. Late fees, installment upfront fees and installment termination fees are the only fees Zed charges.</td></tr>
+</table>
+
+<div class="two">
+  <div class="card"><span class="kicker">Pricing context</span><p>The revolving rate (3% / month) and the installment add-on (1% / month) sit at the current BSP ceilings for credit-card finance charges and installment add-on interest. Zed, other issuers and the Credit Card Association of the Philippines are engaged with the BSP on the periodic re-evaluation of these caps.</p></div>
+  <div class="card"><span class="kicker">Funding</span><p>Zed funds every purchase at settlement from its own balance sheet. There is no bank funding partner and no off-balance-sheet vehicle; receivables, installment balances and all fee and interest income sit in the single issuing entity.</p></div>
+</div>
+
+<div class="foot">Prepared for the Zed data room, October 2026. Consolidates and supersedes the product-mechanics content in Zed's diligence responses of 5 August and 11 September 2026 (items 1.2, 1.4, 2.1–2.2, 6.1–6.2, 7, 8, 9.1–9.3, 10, 11, 12.1). Figures are as stated in those responses; interchange percentages are trailing-six-month averages as of September 2026. Companion document: <i>Installment Funds Flow</i> (Data Room / Product).</div>
+
+</body></html>
