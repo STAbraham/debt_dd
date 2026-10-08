@@ -36,16 +36,16 @@
 
 <div class="kicker">Zed · Diligence supplement · October 2026</div>
 <h1>How Zed works — product and revenue model</h1>
-<p class="lede">Zed issues one product: a <b>Mastercard revolving credit card</b> with a built-in <b>installment feature</b>, issued and funded by Zed's Philippine entity from its own balance sheet (no bank funding partner). Every cardholder is on this product. Revenue comes from three sources — <b>interchange</b> on every purchase, <b>interest</b> when a cardholder revolves, and <b>installment charges</b> when a cardholder converts a purchase into a fixed-term plan — plus a late-payment penalty. Zed charges no annual fee and does not offer cash advances. This note explains the mechanics end to end and where each peso of revenue arises.</p>
+<p class="lede">Zed offers one product: a <b>Mastercard revolving credit card</b> with a built-in <b>installment feature</b>. Every cardholder is on this product. Revenue comes from three sources — <b>interchange</b> on every purchase, <b>interest</b> when a cardholder revolves, and <b>installment charges</b> when a cardholder converts a purchase into a fixed-term plan — plus a late-payment penalty. Zed charges no annual fee and does not offer cash advances. This note explains the mechanics end to end and where each peso of revenue arises.</p>
 
 <div class="grid3">
-  <div class="card"><span class="kicker">Interchange</span><p>Earned at the swipe on every purchase, regardless of how the cardholder later pays. Settled on the network side; never posts to the cardholder's account.</p><p class="muted">Net interchange ≈ 1.43% of purchase volume (1.17% domestic / 1.84% international), trailing six months to Sept 2026.</p></div>
+  <div class="card"><span class="kicker">Interchange</span><p>Earned at the swipe on every purchase, regardless of how the cardholder later pays. Settled on the network side; never posts to the cardholder's account.</p><p class="muted">Rate set by the Mastercard interchange schedule; varies by merchant category and domestic vs international.</p></div>
   <div class="card"><span class="kicker">Revolving interest</span><p>3% per month, applied as 0.1% per day on billed balances not paid in full by the due date. Cardholders who pay in full every cycle pay no interest.</p><p class="muted">At the BSP ceiling for card finance charges.</p></div>
   <div class="card"><span class="kicker">Installment charges</span><p>Upfront fee of 0.5% × term months, billed at enrollment; add-on interest of 1% of original principal per month over the term (3 / 6 / 12 months).</p><p class="muted">Add-on rate at the BSP ceiling.</p></div>
 </div>
 
 <h2>1. The purchase — where interchange is earned</h2>
-<p>A purchase follows the standard four-party card flow. The cardholder swipes at a merchant; the merchant's acquirer routes an authorization to Zed through Mastercard; Zed approves. At settlement (T+1) Zed funds the purchase amount to the network from its own balance sheet, <b>net of interchange</b>, and the merchant receives the amount less its merchant discount rate. On Zed's ledger the cardholder now owes the purchase amount.</p>
+<p>A purchase follows the standard four-party card flow. The cardholder swipes at a merchant; the merchant's acquirer routes an authorization to Zed through Mastercard; Zed approves. At settlement (T+1) Zed funds the purchase amount to the network, <b>net of interchange</b>, and the merchant receives the amount less its merchant discount rate. On Zed's ledger the cardholder now owes the purchase amount.</p>
 <p>Interchange is therefore earned on <b>every</b> purchase at the moment of settlement. What the cardholder does afterwards — pays in full, revolves, or enrolls the purchase in installments — never changes the transaction-level economics. Because installment enrollment happens after the purchase (see §4), there is no way to distinguish at the swipe a purchase that will later be enrolled from one that will not.</p>
 <p class="muted">Interchange is settled between Zed and the network and does not appear on cardholder statements or in receivables tapes. See <i>Installment Funds Flow</i> (Data Room / Product), Part 1, for the swimlane view.</p>
 
@@ -101,7 +101,7 @@
 <h2 style="page-break-before:always;margin-top:0">6. Revenue summary — what Zed earns, when, and where it shows</h2>
 <table>
 <tr><th>Stream</th><th>Trigger</th><th>Rate / amount</th><th>When billed or earned</th><th>Where it appears</th></tr>
-<tr><td><b>Interchange</b></td><td>Every purchase settlement</td><td>≈ 1.43% net of volume (1.17% domestic / 1.84% international, trailing 6 months)</td><td>T+1, netted from Zed's settlement funding</td><td>Network settlement reporting; not on cardholder statements or receivables tapes</td></tr>
+<tr><td><b>Interchange</b></td><td>Every purchase settlement</td><td>Per the Mastercard interchange schedule (varies by merchant category, domestic vs international)</td><td>T+1, netted from Zed's settlement funding</td><td>Network settlement reporting; not on cardholder statements or receivables tapes</td></tr>
 <tr><td><b>Revolving interest</b></td><td>Statement balance not paid in full by the due date</td><td>3% / month as 0.1% / day on billed balances</td><td>Accrues daily from the statement date; bills on the next statement</td><td>Statement tape — interest</td></tr>
 <tr><td><b>Installment upfront fee</b></td><td>Enrollment of a purchase in a plan</td><td>0.5% × term months (1.5% / 3% / 6%)</td><td>Enrollment-cycle statement, in full</td><td>Statement tape — installment fees; installment tape</td></tr>
 <tr><td><b>Installment add-on interest</b></td><td>Each cycle of an active plan</td><td>1% of original principal per month (3% / 6% / 12% over the term)</td><td>Each statement over the term</td><td>Statement tape — installment charges; installment tape</td></tr>
@@ -110,11 +110,10 @@
 <tr><td class="muted">Not charged</td><td class="muted" colspan="4">No annual fee; cash advances are not offered. Late fees, installment upfront fees and installment termination fees are the only fees Zed charges.</td></tr>
 </table>
 
-<div class="two">
+<div>
   <div class="card"><span class="kicker">Pricing context</span><p>The revolving rate (3% / month) and the installment add-on (1% / month) sit at the current BSP ceilings for credit-card finance charges and installment add-on interest. Zed, other issuers and the Credit Card Association of the Philippines are engaged with the BSP on the periodic re-evaluation of these caps.</p></div>
-  <div class="card"><span class="kicker">Funding</span><p>Zed funds every purchase at settlement from its own balance sheet. There is no bank funding partner and no off-balance-sheet vehicle; receivables, installment balances and all fee and interest income sit in the single issuing entity.</p></div>
 </div>
 
-<div class="foot">Prepared for the Zed data room, October 2026. Consolidates and supersedes the product-mechanics content in Zed's diligence responses of 5 August and 11 September 2026 (items 1.2, 1.4, 2.1–2.2, 6.1–6.2, 7, 8, 9.1–9.3, 10, 11, 12.1). Figures are as stated in those responses; interchange percentages are trailing-six-month averages as of September 2026. Companion document: <i>Installment Funds Flow</i> (Data Room / Product).</div>
+<div class="foot">Prepared for the Zed data room, October 2026. Consolidates the product-mechanics content of Zed's diligence responses of 5 August and 11 September 2026 (items 1.2, 1.4, 2.1–2.2, 6.1–6.2, 7, 8, 9.1–9.3, 10, 12.1). Rates and fees are contractual terms, not historical averages. Companion document: <i>Installment Funds Flow</i> (Data Room / Product).</div>
 
 </body></html>
