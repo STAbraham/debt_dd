@@ -28,9 +28,11 @@ Workspace for responding to debt-facility due diligence from credit funds. The `
 
 ## Who owes what (keep current)
 
-- **FPF (Raymond):** indicative terms or a pass — per the 2026-09-18 call, Raymond has an internal meeting the week of 9/21 and expects to come back with one or the other the week of 9/28.
+- **FPF (Raymond):** indicative terms or a pass — still outstanding as of 2026-10-18. On the 2026-10-14 Accial call Steve referred to "another fund" taking Zed to its IC on Monday 2026-10-19; presumed FPF [Steve: confirm].
+- **Accial (Carrie / Lawrence / Mikko):** a proposed facility structure (SPV vs holdco/opco loan with receivables security at $5M) and indicative terms after their IC; they want to align timing with the other fund's IC. Manila in-person 2026-10-16 (Lawrence CIO + Mikko × John CCO + Aubrey Head of Finance) — outcome not yet recorded [Steve: debrief].
+- **Zed → Accial:** interchange fee data for their profitability model (tracker item 14, Open — scope decision pending Steve).
 - **Zed → data room (pending Steve):** review `Data Room/Product/How Zed Works_20261007.pdf` (draft, built 2026-10-07 from sent responses 6.1/7 et al.), then upload to Box / Product and tell Claude so the SHARED-LOG row is added.
-- **Zed:** no diligence owed to FPF as of 2026-09-18 (all 28 responses delivered; funds-flow diagram live in Box / Product; 9/18 call raised no new questions). Steve to catch up with Raymond the week of 9/28 after FPF's internal meeting. Accial: confirm state of the Aug 11–19 Carrie exchange and decide next move (CRM: `Analyses (internal)/Debt Fundraising CRM.xlsx` — Harrison-intro pipeline only: FPF + Accial).
+- **Zed:** no diligence owed to FPF as of 2026-09-18 (all 28 responses delivered; funds-flow diagram live in Box / Product; 9/18 call raised no new questions). Steve to catch up with Raymond the week of 9/28 after FPF's internal meeting. Accial pipeline now in deep diligence (CRM: `Analyses (internal)/Debt Fundraising CRM.xlsx`).
 - **Potential next step (parked per Steve 2026-09-18 — do not execute until asked):** updated unit-economics pro forma at a 50% revolving share. The version FPF holds (`Zed Unit Economics_vF.xlsx`, emailed 8/5) assumes 30% revolving, while the target stated on the 9/18 call was a 50/50 revolver/transactor mix; FPF may ask for it if they model off the call.
 
 ## Sensitivity
