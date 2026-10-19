@@ -114,3 +114,12 @@
 **Tracker:** new section 14 / item 14 (interchange data for Accial), Open with a proposed scope and a `[Steve: decide scope]` placeholder. Verbal figures given to Accial logged in the v21 changelog with two consistency flags (1.87% vs written 1.82%; "1.6% historical" vs written 1.43% trailing-6-month).
 **CRM:** Accial → stage 5 (deep diligence); NDA/data-room dates between 9/11 and 10/14 unconfirmed; two correspondence rows (10/14 call, 10/16 Manila meeting — outcome pending). FPF next-action reset to chase after 10/23.
 **Reviewed by:** pending Steve.
+
+## 2026-10-18 — Accial Manila visit debrief processed (Slack + Notion)
+
+**Inputs:** Slack `#accial-ph-visit` (C0C7ZL7Q1MX) 10/13–10/16; Notion meeting note of the 10/14 call (AI summary; transcript not pulled). Consolidated → `inbox/processed/2026-10-16-accial-manila-visit-debrief.md`.
+**Tracker:** item 15 (breakeven scale) Drafted from Steve's own Slack arithmetic — $450K gross burn ÷ ~$15 ARPAC ≈ 30K active users — with a placeholder for the model figure; item 14 given a timing note. v22 changelog logs the additional verbal disclosures.
+**Flag for `How Zed Works_20261007.pdf`:** Accial has now heard the installment eligibility criteria (₱5,000 minimum; ≤75% of limit; MCC exclusions) verbally; the draft deliberately says only "certain purchases are eligible". Steve to decide whether that stays generic — not changed.
+**Consistency:** Steve's "recent cohorts closer to 1% delinquency" (Slack) vs 0.66% June cohort (Notion) vs 1.82% lifetime written to FPF (13.1) vs 1.87% lifetime said to Accial — four numbers, three definitions; before anything written goes to Accial, fix one definition and one as-of date.
+**CRM:** Accial contacts extended (Lawrence CIO, Mikko, Marco); 10/16 row filled with outcome; 10/13 internal-share row added; correspondence log re-sorted newest-first.
+**Reviewed by:** pending Steve.
