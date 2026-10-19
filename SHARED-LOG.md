@@ -4,6 +4,10 @@ One line per artifact per share event, newest first. **Channel** is `Data Room /
 
 | Date shared | Artifact | Channel | Tracker IDs | Notes |
 |---|---|---|---|---|
+| 2026-09-28 | Cardholder Tape_20260831.xlsx | Data Room (Accial) / Loan Tape | — | Accial-only vintage; FPF holds 6/30 and 7/31 tapes. Box mtime 2026-09-28 13:19. |
+| 2026-09-28 | Statement Tape 20260831.xlsm | Data Room (Accial) / Payment Data | — | Accial-only vintage (FPF holds 6/30 and 7/31). Box mtime 13:31. Note the .xlsm format and space (not underscore) in the name — different build from the FPF tapes? [Steve: confirm same columns/definitions]. |
+| 2026-09-28 | Q2 Board Meeting (Redacted).pdf | Data Room (Accial) / Board Decks | — | Accial-only; FPF has Q1 only. Box mtime 13:26. |
+| 2026-09-28 | Cardholder Tape_20260731.xlsx; Installment Tape_20260814.xlsx; Zed Consolidated Financials_as of July 31, 2026.xlsx; 2022–2025 ZFPI Audited FS (4 PDFs); Q1 Board Meeting (Redacted).pdf; Installment Funds Flow_20260902.pdf | Data Room (Accial) / Loan Tape, Financials, Board Decks, Product | — | Same files as the FPF room (identical sizes); copied into the Accial room when it was opened 2026-09-28 (files carry their original mtimes). Accial does NOT have the 6/30 or 7/31 statement tapes or the 6/30 cardholder tape. |
 | 2026-09-11 | Diligence Responses_20260909.xlsx | Email | 6.1–13.3 (+1.1–5.3 restated) | Two-tab sheet (Initial + Follow-up 8.26) attached to Steve's reply on the "Zed & FPF" thread; call offered Tue/Wed. Note: 13.2 went out labeled "Drafted" in the Status column. |
 | 2026-09-11 | Installment Funds Flow_20260902.pdf | Data Room / Product | 6.2, 7 | Steve's email: "uploaded a new folder into the data room called 'Product' that includes the requested funds flow diagram." Box upload confirmed. |
 | 2026-08-21 | Installment Tape_20260814.xlsx | Email | 5.2, 2.2 | "Please find the installment details attached… close out the last open item (5.2)" — Steve to Katz. Confirm attachment = data-room copy; if it differs, archive the emailed version in Prior Responses. |
@@ -20,4 +24,4 @@ One line per artifact per share event, newest first. **Channel** is `Data Room /
 | unknown | 2022–2025 ZFPI Audited Financial Statements (4 PDFs) | Data Room / Financials / Audited Financials | — | |
 | unknown | Q1 Board Meeting (Redacted).pdf | Data Room / Q1 Board Deck | — | |
 
-*"unknown" share dates predate this log (set up 2026-09-01); backfill if the Box audit trail matters. Rows for the initial data-room load are as-of the file dates in their names.*
+*Accial rows added 2026-10-18 from the Box folder listing (read-only); room-open date inferred from file mtimes — Steve to confirm the Box share date and the NDA execution date. "unknown" share dates predate this log (set up 2026-09-01); backfill if the Box audit trail matters. Rows for the initial data-room load are as-of the file dates in their names.*

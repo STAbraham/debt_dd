@@ -123,3 +123,10 @@
 **Consistency:** Steve's "recent cohorts closer to 1% delinquency" (Slack) vs 0.66% June cohort (Notion) vs 1.82% lifetime written to FPF (13.1) vs 1.87% lifetime said to Accial — four numbers, three definitions; before anything written goes to Accial, fix one definition and one as-of date.
 **CRM:** Accial contacts extended (Lawrence CIO, Mikko, Marco); 10/16 row filled with outcome; 10/13 internal-share row added; correspondence log re-sorted newest-first.
 **Reviewed by:** pending Steve.
+
+## 2026-10-18 — Accial Box data room located and inventoried (read-only)
+
+**Where:** `~/Box Sync/2025:2026 Debt Processes/Credit Provider Data Room/Data Room (Accial)`, sibling of `Data Room (FPF)`. **Rule (Steve, 2026-10-18): Claude never writes to Box Sync without an explicit instruction; reading for context is fine.** Recorded in the debt-dd skill, README and memory.
+**Inventory (file mtimes):** opened 2026-09-28 with three Accial-only items — `Cardholder Tape_20260831.xlsx`, `Statement Tape 20260831.xlsm`, `Q2 Board Meeting (Redacted).pdf` — plus the FPF file set (7/31 cardholder tape, 8/14 installment tape, July consolidated financials, 2022–25 audited FS, Q1 deck, funds-flow PDF; identical sizes to the FPF copies). Accial does not have the 6/30 or 7/31 statement tapes or the 6/30 cardholder tape. Neither room has `How Zed Works_20261007.pdf` (still pending Steve's review).
+**Asymmetry to watch:** Accial's tapes are 8/31 vintages while FPF's latest are 7/31 — any figure quoted to both funds (loss rate, revolver share, interchange) must say which as-of date it uses. The Accial statement tape is `.xlsm` with a different naming pattern — Steve to confirm it is the same build/column set as the FPF tapes.
+**Repo mirror unchanged:** `Data Room/` still mirrors FPF only (verified against Box: identical file list apart from lock files and the pending How-Zed-Works PDF). Accial's holdings are tracked in SHARED-LOG rows rather than by copying ~12 MB of tapes a second time.
