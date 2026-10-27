@@ -34,3 +34,18 @@ Revolving launched late June, so the Sep run-rate is the relevant forward number
 4. Interchange: in configuration A it never passes through the collection account; a lender counts it only via a parent guarantee / corporate recourse, not via the collateral waterfall.
 
 Market practice [practice, not documentable]: EM consumer-credit funds underwrite to portfolio net yield after losses materially above cost of funds — commonly framed as excess spread of ≥5–10 points or net-yield coverage of interest ≥1.25–1.5x — and put a cash-trap / early-amortisation trigger on it. Marco's "annualized yield" BOTE is exactly this calculation.
+
+## Addendum 2026-10-26 — reconciliation to Steve's BOE sheet ("BOE Yield", Google Sheet 1FXNnacOu…)
+
+Steve's method: September balances by bucket ($M: installment 0.60 / revolving 1.57 / transacting 1.56 = 3.73), a monthly loan yield + interchange − loss per bucket, balance-weighted, × 12 → 31.89%. Same simple ×12 annualization as mine (no compounding either side). Per-bucket actuals for Sep 2026 (balances report 10/26 + dashboard):
+
+| Bucket | Steve loan yield | Actual | Steve interchange | Actual | Steve loss | Actual (181+ growth ₱1.85M/mo) |
+|---|---|---|---|---|---|---|
+| Installment (₱33.4M) | 1.50%/mo | 2.77%/mo (1% add-on + upfront fees) | 0.13% | — | 0.07% | ~0 (plans cancel on delinquency) |
+| Revolving (₱91.4M) | 5.00%/mo | 2.44%/mo (₱2.23M interest; cap is 3%) | 0.13% | — | 0.07% | 2.02%/mo — ₱17.7M of this bucket is 180+ |
+| Transacting (₱83.5M) | 0 | 0 | 1.50%/mo | 3.15%/mo (₱2.63M; balances turn 2.3×/mo) | 0.88%/mo | ~0 (x180 cut removes nothing here) |
+| **Blended** | | | | | 0.41%/mo = 4.9%/yr | 0.89%/mo = 10.5%/yr |
+| **Net annualized** | **31.9%** | | | | | **22.7%** re-stated; **23.1%** whole-book method (33.6% − 10.5%) |
+
+Differences that matter: (1) 5.00%/mo on revolving is above the 3% cap — actual is 2.44%; (2) interchange on transacting is 3.15%/mo, not 1.50%, because transacting balances turn more than twice a month — but it is still only 1.26%/mo of the whole book; (3) the loss rate is right (0.88%/mo ≈ 181+ growth) but is loaded on the wrong bucket — 180+ balances are revolving by construction, so losses belong on revolving at ~2%/mo, making blended losses ~10.5%/yr not ~5%. Net of all three, the sheet's 31.9% becomes ~23%. Excluding interchange (collateral cash flows only): ~8%.
+Denominator note: my earlier 12–16% loss figure annualized bucket growth on the Q3/T6 average book (₱154–182M); on the Sep book (₱211M) the same ₱1.85M/mo is 10.5%. On a book growing ~10%/month the choice of denominator moves the loss rate by several points — state it whenever the number is quoted.
