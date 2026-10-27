@@ -42,3 +42,15 @@
 - **Share interchange fee data with Accial** — Not included in the loan tape; Accial needs it to complete their profitability model.
 - **Accial to propose a facility structure** — Determine whether $5M warrants SPV setup or a simpler holdco/opco loan with a path to SPV at scale.
 - **Accial to revert with feedback and indicative terms after IC process** — Another fund's IC meets Monday; Accial is at the same stage and wants to align on timing.
+
+### Transcript check (2026-10-26) — the "interchange data" action item
+
+Verbatim from the Notion transcript of this call (speakers unlabeled in the transcript; attribution from context):
+
+- **Carrie:** "The interest rate charges, I know for cards usually have some interchange as well or upfront fees, we just want to understand sort of the overall pricing structure of the product so we can… model out, kind of based on the historical performance, what we would expect in terms of profitability of the product… so it would be great if you could just sort of walk through the structure."
+- **Steve:** "You're right, Carrie, in that the interchange fees aren't included in the tape data because that's not a function of the loan portfolio itself… So we just accounted for it separately… So, but we're happy to share that information. I'm looking at September, 2026. The average interchange fee for that month was 1.38%. The month before it was 1.45%… I think our historical average sits at around 1.6 percent."
+- **Carrie (next line):** "Great, that makes sense. And then what is the interest rate that you charge on the revolving balances…"
+- **Mikko's only question on the call:** "how many days past due is the company write-off?" → policy 180 days (Auvrey).
+- **Carrie, closing:** "I know it's been a little bit slow with, like, getting data from you guys, and then I want to get you guys feedback soon."
+
+Conclusion: **no one at Accial requested interchange data.** The "Next Steps — Share interchange fee data" line above (and the identical Notion action item) was generated from Steve's own offer. Logged as a correction in TRACKER v25.
