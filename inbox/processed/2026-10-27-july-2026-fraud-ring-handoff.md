@@ -106,3 +106,19 @@ Tables (all in `epicac-2.epicac_prod_direct`, CDC append-only; dedupe with `QUAL
 - Month-end ring delinquent balance: for each month end take each member's latest delinquency row with `effective_delinquency_date <= month_end`, sum `delinquent_balance` where `days_past_due > 15`.
 
 Caveats: the delinquency file lags by a day; `public_transfer_sessions` does not hold the card-to-card transfers cited above (they came from i2c push messages, transaction type C2C, in the October investigation); the hub's limit raise date is "June 2026" from the credit limit changelog, exact day not re-pulled here. The seven delinquent balances include interest and fees accrued since the first statement, so they exceed the ₱150,000 limits.
+
+## Fraud controls: rollout dates and one-line descriptions
+
+Source: the daily `app_review_scores` decision sheet. Tabs through 2026-10-23 carry only the credit knockouts (Low ADB, model score). The 2026-10-24 decisioning run (BigQuery `zed_data_science.app_review_sheet_20261024`) is the first with the fraud rules; the 2026-10-26 tab is the first ops-facing day with them.
+
+| Control | Rollout | One line |
+|---|---|---|
+| Manual ring takedown | 2026-07-22 to 2026-08-03 | Ops suspended the six issued construction-ring cards and denied the five linked applications after the July cohort was traced by device, IP, address and Persona ID-image matches. |
+| Duplicate-applicant block (name + DOB, ID number, email, cardholder) | In place by 2026-10-01 | Applicants matching an existing account on exact full name and DOB or on Persona ID number are routed to review as `duplicate user`. |
+| Shared bank account number knockout | 2026-10-24 | Any applicant whose uploaded statement carries an account number already seen on another applicant's statement is auto-declined (`KO:Shared bank acct`). |
+| Persona repeat-match screen | 2026-10-24 | Failed selfie or ID-image repeat checks resolve to the matched account and decline or hold; an unscreened selfie (`image_quality_low`) holds for re-KYC. |
+| Invite first-name mismatch knockout | 2026-10-24 | An invite redeemed under a first name that does not match the application (after nickname, middle-name and email checks) is auto-declined (`KO:Invite name mismatch`). |
+| Business-owner income haircut and EDD | 2026-10-24 | Self-declared business owners get limits on 50% of declared income and are routed to document review (`EDD: biz registration, ITR`). |
+| CIBI past-due knockout | 2026-10-24 | Applicants with a past-due tradeline on the CIBI credit report are auto-declined (`KO:CIBI past due`); a credit rule, not a fraud rule, but it is the largest new screen (172 of 993 in the first run). |
+
+Suggested controls sentence: "Fraud controls were tightened in two steps: the July ring was suspended manually between 22 July and 3 August 2026, and from the 24 October 2026 decisioning run every application is screened for shared bank account numbers, Persona selfie and ID-image repeats, invite-name mismatches and CIBI past-due tradelines, with business-owner limits set on half of declared income pending documents."
