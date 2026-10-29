@@ -1,6 +1,6 @@
 # July 2026 Fraud Ring: Linked Accounts and Issuance Timeline
 
-Handoff, 2026-10-27. For an agent sizing this ring's effect on 2026 delinquency rates and balances. All money in PHP. Dates are Manila time. Delinquency dates come from `effective_delinquency_date` (the delinquency file is T+1; never use `updated_at`).
+Handoff, 2026-10-27, updated 2026-10-28 with the FPD-as-fraud-proxy section. For an agent sizing this ring's effect on 2026 delinquency rates and balances. All money in PHP. Dates are Manila time. Delinquency dates come from `effective_delinquency_date` (the delinquency file is T+1; never use `updated_at`).
 
 ## Summary
 
@@ -122,3 +122,35 @@ Source: the daily `app_review_scores` decision sheet. Tabs through 2026-10-23 ca
 | CIBI past-due knockout | 2026-10-24 | Applicants with a past-due tradeline on the CIBI credit report are auto-declined (`KO:CIBI past due`); a credit rule, not a fraud rule, but it is the largest new screen (172 of 993 in the first run). |
 
 Suggested controls sentence: "Fraud controls were tightened in two steps: the July ring was suspended manually between 22 July and 3 August 2026, and from the 24 October 2026 decisioning run every application is screened for shared bank account numbers, Persona selfie and ID-image repeats, invite-name mismatches and CIBI past-due tradelines, with business-owner limits set on half of declared income pending documents."
+
+
+## Perspective: FPD is a proxy, so tier it instead of defending it
+
+The objection is right as stated: "billed once, never paid" is a behaviour, not proof of fraud, and if every unproven first-statement default is booked as a credit loss the ex-FPD rate collapses back toward the all-in figure. The answer is not to argue the label. It is to show that the FPD population splits into groups with different evidence, concede the groups that look like credit, and carry only the fraud-shaped groups out of the loss rate. Done that way the adjusted rate rests on observable behaviour rather than on a definition.
+
+**Definitions differ, reconcile first.** The 75 cited above is the other workstream's count. Rebuilding from the warehouse with the definition used throughout this exploration (first statement due on or before 2026-10-12, account more than 15 DPD exactly 16 days after that due date, issued in 2026) gives 89 first-statement defaulters in the 2026 cohorts, 7 of them in the ring. The two counts need to be reconciled before any rate is quoted; the tiering below uses the 89.
+
+**Four tiers, 2026 cohorts, delinquency file as of 2026-10-27**
+
+| Tier | Definition | Accounts | Delinquent balance | Limits issued | Treat as |
+|---|---|---|---|---|---|
+| 1 | Documented linkage: the July ring (devices, household IPs, Persona ID-image matches, transfers to a hub) | 7 | 840,794 | 1,050,000 | Fraud |
+| 2 | No customer payment ever, and at least one fraud marker: first statement at 80%+ of limit (33 of 35), a device or IP shared with a 30+ DPD or suspended account (11), an invite under another name (4), a bank account number shared with another applicant (2) | 35 | 1,698,972 | 1,380,000 | Fraud-shaped; defensible as first-party fraud |
+| 3 | No customer payment ever, no marker: small limits (₱200,000 across six), median first statement at 44% of limit | 6 | 170,817 | 200,000 | Concede as credit |
+| 4 | Missed the first minimum but paid something: 25 paid less than the minimum before the due date, 9 paid nothing by the due date and first paid about three weeks late, 7 appear to have met the minimum on time and need reconciling (see note). 11 have since cured to 0 DPD, 25 are now 90+ DPD | 41 | 1,634,956 | 1,960,000 | Underwriting miss; concede as credit |
+| | Total | 89 | 4,345,539 | 4,590,000 | |
+
+"Customer payment" means a successful row in incoming_payments. Seven of the 41 never-paid accounts show statement credits, which are merchandise returns, not payments; they stay in tiers 2 and 3.
+
+**Why tier 4 is still FPD, and what cures mean.** FPD here is defined by the delinquency file: the account was more than 15 DPD sixteen days after its first due date, so the first minimum was not met on time. Tier 4 accounts paid, but too little (below the minimum) or too late (after the due date plus grace). Seven of them show on-time payments that appear to cover the minimum yet still entered the delinquency file; before anyone quotes them, check whether the payment settled after the grace window, the minimum changed after statement close, or a payment was reversed. The 11 cured accounts are at 0 DPD with no delinquent balance: they do not appear in any point-in-time delinquency rate (15+, 30+, 90+) and only count in an ever-FPD tally. If the 75 cited by the other workstream is an ever-FPD count, its cures should be removed before it enters a loss-rate argument; if it is a current-delinquency count, they are already out.
+
+**What this gives the loss-rate discussion**
+
+- Fraud-shaped (tiers 1 and 2) is 42 of 89 accounts and ₱2.54M of the ₱4.35M first-statement-default balance, 58% of it. Tiers 3 and 4, ₱1.81M, go back into the credit loss line without argument.
+- Quote three rates, not two: all-in; ex-documented fraud (tier 1 only, the conservative floor); ex-fraud-shaped (tiers 1 and 2, the case we can evidence). Let the counterparty pick; the middle number still removes the ring, and the third is backed by markers they can inspect account by account.
+- Tier 2 is where the argument is won or lost. The marker that carries it is not "never paid" but "ran the limit on the first statement and never paid": 33 of 35 hit 80%+ utilisation in the first cycle, and in the earlier 147-account analysis that pattern combined with quasi-cash or online-retail spend and no payment described the ring accounts exactly. Lenders call this first-party fraud or bust-out; it is a recognised fraud category, and the controls shipped on 2026-10-24 (shared account, invite name, Persona repeat, business-owner haircut) target precisely the markers in this tier.
+- Vintage matters for the forward view. 60 of the 89 were issued in February to April 2026, 16 in May to June, 10 in July and after. All of them pre-date the 24 October controls, so the 2026 FPD rate is a pre-control number. The right forward claim is not that fraud was X% of 2026 losses but that the markers behind tiers 1 and 2 are now screened at application, and that the day-14 limit-freeze rule (80% of limit within 14 days with quasi-cash spend, or a phone change before the first due date) would have flagged about half of the tier 2 accounts before their first statement.
+
+**What not to claim.** Do not present tier 4 as fraud; 11 of those accounts have cured and 27 paid more than once, which is what a stretched borrower looks like. Do not present tier 2 as proven; present the markers and let the evidence do the work. And do not quote the ex-FPD rate as a single number without the tiering behind it, because that is the version of the argument the objection defeats.
+
+Reproduction: the tiering query is `fpd_2026_tiering.sql` next to this file, with its per-account output in `fpd_2026_tiering.csv` (first statement per user from public_statements by to_date; first-bad date from public_delinquent_accounts via effective_delinquency_date minus (days_past_due minus 16); payments from public_incoming_payments status Success; markers from public_cards, public_device_events with keys shared by six or fewer users, public_access_codes metadata.first_name, public_pdf_bank_statements account_number).
