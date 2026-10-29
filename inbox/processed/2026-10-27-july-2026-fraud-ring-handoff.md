@@ -154,3 +154,29 @@ The objection is right as stated: "billed once, never paid" is a behaviour, not 
 **What not to claim.** Do not present tier 4 as fraud; 11 of those accounts have cured and 27 paid more than once, which is what a stretched borrower looks like. Do not present tier 2 as proven; present the markers and let the evidence do the work. And do not quote the ex-FPD rate as a single number without the tiering behind it, because that is the version of the argument the objection defeats.
 
 Reproduction: the tiering query is `fpd_2026_tiering.sql` next to this file, with its per-account output in `fpd_2026_tiering.csv` (first statement per user from public_statements by to_date; first-bad date from public_delinquent_accounts via effective_delinquency_date minus (days_past_due minus 16); payments from public_incoming_payments status Success; markers from public_cards, public_device_events with keys shared by six or fewer users, public_access_codes metadata.first_name, public_pdf_bank_statements account_number).
+
+
+## Same tiering, accounts issued after 5 May 2026 (credit model v2.1)
+
+Cohort: accounts first issued after 2026-05-05 whose first statement was due on or before 2026-10-12. 5,072 accounts matured; 26 are first-statement defaulters, 7 of them the ring. The pre-v2.1 2026 cohorts (issued 1 January to 5 May) had 3,948 matured accounts and 63 defaulters.
+
+| Tier | Accounts | Delinquent balance | Limits issued | Notes |
+|---|---|---|---|---|
+| 1 Documented linkage (ring) | 7 | 840,794 | 1,050,000 | All seven ring defaulters were issued after 5 May (Robbins 6 May, Foliente 13 July, four on 21 July, Dela Cruz 23 July). The hub was issued 18 March and is not a defaulter |
+| 2 No customer payment, fraud marker present | 13 | 646,627 | 565,000 | 12 of 13 ran the first statement to 80%+ of limit; 3 share a device or IP with a bad account; 1 invite under another name; 1 shared bank account number. Limits mostly ₱15,000 and ₱35,000, two at ₱150,000 |
+| 3 No customer payment, no marker | 2 | 47,814 | 75,000 | Concede as credit |
+| 4 Paid something, missed the first minimum | 4 | 50,015 | 60,000 | 1 partial before due, 2 late only, 1 to reconcile; 1 has cured |
+| Total | 26 | 1,585,250 | 1,750,000 | |
+
+**Rates on the 5,072 matured v2.1 accounts**
+
+| Measure | Defaulters | Rate |
+|---|---|---|
+| All-in first-statement default | 26 | 0.51% |
+| Ex-documented fraud (tier 1 out) | 19 | 0.37% |
+| Ex-fraud-shaped (tiers 1 and 2 out) | 6 | 0.12% |
+| For comparison: 2026 cohorts before v2.1, all-in | 63 of 3,948 | 1.60% |
+
+**Reading.** After v2.1 the first-statement default rate fell by two thirds on an all-in basis, and what remains is dominated by fraud-shaped accounts: tiers 1 and 2 are 20 of 26 accounts and ₱1.49M of the ₱1.59M delinquent balance (94%). The credit-shaped residue (tiers 3 and 4) is six small accounts and ₱98k. So for the post-May book the objection largely falls away on its own terms: even if every unproven default is conceded as credit, the all-in rate is 0.51%, and the part that is arguably credit is 0.12%. The ring alone is 53% of the post-May FPD balance, which is why the ring handoff above matters for the 2026 loss-rate story.
+
+Caveats: the post-May cohort is younger (median about three months on book), so later-cycle losses are not yet visible and this is a first-statement measure only; the ring was caught by ops in July, so its balance is the loss before controls, not after; the 24 October application screens post-date every account here. Query and per-account output: `fpd_v21_tiering.sql`, `fpd_v21_tiering.csv`.
