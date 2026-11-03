@@ -1,0 +1,169 @@
+user_id,issued_on,cohort,tier,limit,first_bal,first_util,paid_total,paid_ratio,third_party_share,other_zed_sender,markers,dpd_now,max_dpd,dq_bal,cured
+e552af2d-7ab3-4eb7-bace-f5a8c7472c9f,2025-01-08,pre-2026,"T2 bust-out, never paid, marker",10000.0,9479.79,0.95,0,0.0,0,False,util80,621.0,621.0,21090.69,False
+5ff51531-8227-4854-9a05-aa695c2c58a0,2025-03-26,pre-2026,"T2 bust-out, never paid, marker",15000.0,14989.47,1.0,0,0.0,0,False,util80,533.0,533.0,30882.7,False
+cda997e1-6bb3-4b78-b8cf-6d8957aa28ba,2025-03-31,pre-2026,"T7 partial payer, not maxed, rolled (credit-leaning)",10000.0,9836.68,0.99,50.0,0.01,0.0,False,util80,533.0,533.0,25056.9,False
+a189c457-e1d5-4170-93e1-7885bbd78687,2025-04-04,pre-2026,"T7 partial payer, not maxed, rolled (credit-leaning)",5000.0,4619.0,0.92,1000.0,0.22,0.0,False,util80,529.0,529.0,17197.01,False
+8e6b504b-b21f-43af-8199-683931c5ccba,2025-04-08,pre-2026,"T2 bust-out, never paid, marker",15000.0,14995.0,1.0,0,0.0,0,False,util80,518.0,518.0,28990.44,False
+f71480bb-2e5d-4d50-aeaa-e9b5b6c79ab9,2025-04-09,pre-2026,"T2 bust-out, never paid, marker",5000.0,4934.0,0.99,0,0.0,0,False,util80|badlink,518.0,518.0,18772.39,False
+c8d96fff-9da6-4b46-9962-eed71fd34b37,2025-04-17,pre-2026,T5 paid down then busted (cycle-and-bust),25000.0,24423.41,2.06,27000.0,1.11,0.0,False,util80,513.0,513.0,42477.79,False
+64f00d2d-a7a7-4d14-b59c-8be90c1cc152,2025-04-23,pre-2026,"T2 bust-out, never paid, marker",10000.0,9972.05,1.0,0,0.0,0,False,util80,502.0,502.0,25049.19,False
+63f655bd-07c4-4efd-b1d6-733d8a219b60,2025-04-24,pre-2026,"T6 never paid, no marker (credit)",10000.0,6309.35,0.63,0,0.0,0,False,,502.0,502.0,20790.74,False
+b9235e92-77ab-4d28-b94a-a0a630692cf7,2025-05-07,pre-2026,"T7 partial payer, not maxed, rolled (credit-leaning)",10000.0,9490.03,0.95,1954.3,0.21,0.0,False,util80,488.0,488.0,21972.2,False
+c2b52eff-74d1-42dd-9ec8-5fa24326e7c1,2025-05-07,pre-2026,T3 bust-out with token payments,10000.0,9255.2,1.08,3466.37,0.37,0.0,False,util80,488.0,488.0,22040.25,False
+4b8607be-d02f-4f96-ad75-2c15be8f14fe,2025-05-15,pre-2026,"T7 partial payer, not maxed, rolled (credit-leaning)",50000.0,27802.58,0.56,10.0,0.0,0.0,False,,483.0,483.0,67076.0,False
+8e002a02-af53-4197-8e48-9d66d71c4efd,2025-05-19,pre-2026,T3 bust-out with token payments,25000.0,21821.6,1.15,10693.0,0.49,0.0,False,util80,483.0,483.0,35789.98,False
+ba8e4ffa-4a30-4a2e-b2fa-ceefac2538cb,2025-05-20,pre-2026,"T4 third-party-funded payments, rolled",25000.0,22788.25,0.91,120.0,0.01,1.0,False,util80|phones2,472.0,472.0,43324.02,False
+be4275f2-3e31-4625-b63a-188e03f060ba,2025-05-21,pre-2026,"T2 bust-out, never paid, marker",75000.0,74678.35,1.0,0,0.0,0,False,util80,472.0,472.0,103768.18,False
+3c24679b-4a81-408f-84a6-95fdf9c649ce,2025-05-27,pre-2026,T3 bust-out with token payments,5000.0,4983.87,1.0,1000.0,0.2,0.0,False,util80,472.0,472.0,20998.74,False
+e2495cc5-fbd6-477f-83db-93e13e7eea41,2025-05-27,pre-2026,T3 bust-out with token payments,5000.0,4341.37,1.0,644.95,0.15,0.0,False,util80,472.0,472.0,22639.39,False
+4f9dbdc3-3134-4c97-9b79-ff1dbdd9a1f1,2025-05-27,pre-2026,"T7 partial payer, not maxed, rolled (credit-leaning)",50000.0,47191.29,0.98,12000.0,0.25,0.0,False,util80|badlink|phones2,472.0,472.0,61631.21,False
+f957deb4-ce1f-424d-8966-66e4bdb979fc,2025-05-28,pre-2026,"T2 bust-out, never paid, marker",25000.0,22704.3,0.91,0,0.0,0,False,util80|badlink,472.0,472.0,43340.36,False
+2ba917d8-9a74-4ef7-963b-72290a46f701,2025-05-29,pre-2026,"T4 third-party-funded payments, rolled",25000.0,12779.5,0.51,8600.0,0.67,1.0,False,,472.0,472.0,32281.49,False
+44b8fa1d-d4a9-434a-9338-c82143381bcc,2025-06-03,pre-2026,"T2 bust-out, never paid, marker",5000.0,4946.29,1.09,0,0.0,0,False,util80,468.0,468.0,21041.65,False
+d6285ed5-4123-4a9f-a9eb-ad5795aca108,2025-06-03,pre-2026,"T2 bust-out, never paid, marker",5000.0,4979.0,1.0,0,0.0,0,False,util80,468.0,468.0,21078.53,False
+721d222d-e0da-4f03-95b5-5786695c8d25,2025-06-04,pre-2026,"T2 bust-out, never paid, marker",15000.0,13450.23,0.9,0,0.0,0,False,util80,468.0,468.0,32371.52,False
+56a4f0e5-0a3d-4d8c-91ee-b169462e842b,2025-06-04,pre-2026,"T2 bust-out, never paid, marker",5000.0,4860.0,0.97,0,0.0,0,False,util80,468.0,468.0,20944.33,False
+f07947d7-4c5c-47ad-a276-73dd7d112953,2025-06-10,pre-2026,"T2 bust-out, never paid, marker",10000.0,9891.66,0.99,0,0.0,0,False,util80|badlink,457.0,457.0,25490.81,False
+31b50733-24b3-46f9-a7e6-ffa707006b44,2025-06-11,pre-2026,"T2 bust-out, never paid, marker",15000.0,14705.45,0.98,0,0.0,0,False,util80,457.0,457.0,32272.53,False
+50f15576-00e8-46c4-878b-e560b5fb1917,2025-06-18,pre-2026,"T2 bust-out, never paid, marker",5000.0,4887.0,0.98,0,0.0,0,False,util80,452.0,452.0,21462.34,False
+d304904e-c6ae-486a-890e-a44ec6561046,2025-06-23,pre-2026,"T2 bust-out, never paid, marker",25000.0,24994.21,1.0,0,0.0,0,False,util80,441.0,441.0,44840.08,False
+af6084bb-9782-424d-bb1a-dbfc4685e46d,2025-07-10,pre-2026,"T6 never paid, no marker (credit)",115000.0,69164.74,0.6,0,0.0,0,False,,426.0,426.0,144240.47,False
+faf237d3-ad4a-4934-8143-edb8e3937ed0,2025-07-11,pre-2026,"T7 partial payer, not maxed, rolled (credit-leaning)",50000.0,49717.92,0.99,12922.92,0.26,0.0,False,util80|badlink,426.0,426.0,56144.21,False
+0551ac71-1606-4fd7-a296-351d7cee852c,2025-07-14,pre-2026,T3 bust-out with token payments,25000.0,24000.0,1.0,1000.0,0.04,0.0,False,util80,426.0,426.0,43504.45,False
+802f3a0c-190e-4fef-94b2-75031acddb50,2025-07-14,pre-2026,"T2 bust-out, never paid, marker",150000.0,149405.0,1.0,0,0.0,0,False,util80,426.0,426.0,183947.06,False
+417f6c9f-738f-429d-a885-be1f1d76f2ad,2025-07-20,pre-2026,"T2 bust-out, never paid, marker",50000.0,49969.29,1.0,0,0.0,0,False,util80,410.0,410.0,73877.44,False
+e8ae70e3-d658-415d-9ede-1cebb9495dcb,2025-07-20,pre-2026,"T2 bust-out, never paid, marker",35000.0,34990.0,1.0,0,0.0,0,False,util80|badlink,410.0,410.0,56461.71,False
+9b3905d5-7814-4b3d-bbd7-694cd2f51648,2025-07-20,pre-2026,"T7 partial payer, not maxed, rolled (credit-leaning)",35000.0,24200.75,0.71,1000.0,0.04,0.0,False,,410.0,410.0,55286.56,False
+25e9629d-4b52-41b5-a9d1-adfbddadc8d5,2025-07-25,pre-2026,T3 bust-out with token payments,150000.0,149248.3,1.01,58345.36,0.39,0.0,False,util80|badlink|invite|phones2,410.0,410.0,108266.57,False
+4e9da389-6dfe-4108-9d46-22ff9e42673b,2025-07-25,pre-2026,T5 paid down then busted (cycle-and-bust),50000.0,47155.5,1.18,25500.0,0.54,0.0,False,util80|badlink,410.0,410.0,68826.39,False
+af3eba50-6d28-40e9-97f0-916fd3426cad,2025-07-31,pre-2026,"T7 partial payer, not maxed, rolled (credit-leaning)",10000.0,9574.71,0.96,2500.0,0.26,0.4,False,util80,410.0,410.0,26429.17,False
+349b5c06-98f8-4c8a-a9d7-acb27a16ea98,2025-07-31,pre-2026,T5 paid down then busted (cycle-and-bust),150000.0,149964.26,1.33,177205.0,1.18,0.12,False,util80|badlink,410.0,410.0,189015.15,False
+c4c35ba4-8cb0-4c0d-abfe-471e99c70f99,2025-08-15,pre-2026,"T2 bust-out, never paid, marker",50000.0,50000.0,1.6,0,0.0,0,False,util80|badlink|sharedacct,391.0,391.0,72750.5,False
+d3af3988-d34b-4c6f-8b50-25e6117d899d,2025-08-15,pre-2026,"T2 bust-out, never paid, marker",10000.0,9886.67,0.99,0,0.0,0,False,util80|badlink,391.0,391.0,26112.58,False
+49b065d9-89d1-48d6-8558-79ef94dd940a,2025-08-18,pre-2026,"T2 bust-out, never paid, marker",50000.0,40603.68,0.83,0,0.0,0,False,util80|badlink|phones2,391.0,391.0,72749.29,False
+f8838d47-15b1-4602-99f3-87c112fccbd6,2025-08-18,pre-2026,T3 bust-out with token payments,65000.0,61564.53,1.0,15204.0,0.25,0.0,False,util80|badlink,391.0,391.0,86981.32,False
+77c5b676-e1a1-465c-8a20-a41f6da3ba72,2025-08-18,pre-2026,T8 cured or still paying (credit),75000.0,74620.81,0.99,38175.35,0.51,0.0,False,util80,391.0,391.0,47618.58,False
+7f741d0f-0063-4c57-97f2-c913a034fc9a,2025-08-18,pre-2026,T8 cured or still paying (credit),25000.0,24950.71,1.01,17301.36,0.69,0.25,False,util80,391.0,391.0,17698.08,False
+a8310d1c-44d2-4357-b62c-ce9e01fd83e9,2025-08-27,pre-2026,"T2 bust-out, never paid, marker",50000.0,49767.52,1.0,0,0.0,0,False,util80,380.0,380.0,71317.56,False
+01a54d48-7ade-4995-8147-8006e3f8aa0e,2025-08-27,pre-2026,"T2 bust-out, never paid, marker",25000.0,24980.0,1.0,0,0.0,0,False,util80,380.0,380.0,43660.89,False
+94701bf8-a67c-4c69-848c-aaa3d246492a,2025-08-27,pre-2026,"T2 bust-out, never paid, marker",65000.0,64772.85,1.0,0,0.0,0,False,util80,380.0,380.0,90100.62,False
+e55447de-cfaf-41f0-ab43-462bf1634d9c,2025-08-27,pre-2026,"T2 bust-out, never paid, marker",85000.0,84936.02,1.0,0,0.0,0,False,util80|invite|phones2,380.0,380.0,112258.65,False
+dc411187-f90d-49c4-9ab8-b7718bb562cb,2025-08-31,pre-2026,"T2 bust-out, never paid, marker",75000.0,74968.68,1.0,0,0.0,0,False,util80|badlink|invite,380.0,380.0,101780.44,False
+7dce203e-6a79-47cd-9dfb-0c776532abb6,2025-08-31,pre-2026,"T2 bust-out, never paid, marker",150000.0,149550.48,1.0,0,0.0,0,False,util80,380.0,380.0,188788.22,False
+a027275d-b2c2-4b98-88e0-94ea8d9a12d7,2025-08-31,pre-2026,"T2 bust-out, never paid, marker",35000.0,34986.0,1.0,0,0.0,0,False,util80,380.0,380.0,55294.41,False
+3c1d6839-3ade-4803-a83d-3241be37995d,2025-08-31,pre-2026,"T2 bust-out, never paid, marker",35000.0,34951.0,1.0,0,0.0,0,False,util80,380.0,380.0,55253.73,False
+9b173c56-ccb4-4640-b846-52d598a18efe,2025-08-31,pre-2026,"T2 bust-out, never paid, marker",35000.0,35000.0,1.0,0,0.0,0,False,util80|badlink|invite|sharedacct,380.0,380.0,55310.69,False
+fbc3b8fa-ecf6-47e3-9a00-583531ea853d,2025-08-31,pre-2026,"T6 never paid, no marker (credit)",35000.0,7834.09,0.22,0,0.0,0,False,,380.0,380.0,35367.11,False
+8808fbcb-a09e-4178-b2c6-f04e98af5884,2025-09-05,pre-2026,"T2 bust-out, never paid, marker",135000.0,133603.71,0.99,0,0.0,0,False,util80|badlink,365.0,365.0,165265.33,False
+3bf4e8e7-7543-468e-8c2a-d9fd1eac377c,2025-09-05,pre-2026,"T2 bust-out, never paid, marker",65000.0,64925.57,1.0,0,0.0,0,False,util80,365.0,365.0,86424.61,False
+e06decde-b8c1-465f-b5a5-78c9534341be,2025-09-05,pre-2026,"T7 partial payer, not maxed, rolled (credit-leaning)",150000.0,90682.98,0.62,12500.0,0.14,0.0,False,,365.0,365.0,167219.45,False
+3db632f2-492f-41b5-82cf-42e75c62f1cc,2025-09-05,pre-2026,"T2 bust-out, never paid, marker",150000.0,149949.79,1.0,0,0.0,0,False,util80|invite,365.0,365.0,182306.02,False
+26d903a7-e797-49dd-8596-df84d1e50e31,2025-09-05,pre-2026,T3 bust-out with token payments,35000.0,34791.87,1.22,9000.0,0.26,1.0,False,util80,365.0,365.0,51315.27,False
+5b9d2446-ea4f-4ddf-8daa-0113822a564a,2025-09-08,pre-2026,"T6 never paid, no marker (credit)",50000.0,14998.26,0.3,0,0.0,0,False,,365.0,365.0,69570.49,False
+4d1ee3c9-2c82-4355-b4d6-fde02e7f4012,2025-09-25,pre-2026,"T2 bust-out, never paid, marker",15000.0,14994.0,1.0,0,0.0,0,False,util80|phones2,349.0,349.0,30887.98,False
+25bfa174-13ca-4a03-bd00-748d8011dde4,2025-09-29,pre-2026,"T2 bust-out, never paid, marker",35000.0,34986.19,1.0,0,0.0,0,False,util80|badlink,349.0,349.0,54131.99,False
+1be23f93-4ffa-4954-a2d3-3552e466bca2,2025-10-01,pre-2026,"T2 bust-out, never paid, marker",35000.0,34987.09,1.0,0,0.0,0,False,util80|phones2,345.0,345.0,50407.73,False
+8c8b63f8-3d30-47e2-92fb-5089abf475f5,2025-10-20,pre-2026,"T2 bust-out, never paid, marker",150000.0,149779.6,1.0,0,0.0,0,False,util80|badlink,319.0,319.0,186434.33,False
+017d3461-c420-48e4-a0f8-55f386267cad,2025-10-22,pre-2026,"T2 bust-out, never paid, marker",50000.0,47465.14,0.95,0,0.0,0,False,util80,319.0,319.0,67478.01,False
+e08afc17-1e40-486c-b3a1-049b027d5d78,2025-10-22,pre-2026,T3 bust-out with token payments,85000.0,84761.57,1.05,7154.0,0.08,0.04,False,util80|badlink,319.0,319.0,106533.58,False
+19ad5658-accf-4c1d-963f-4671ed65e713,2025-10-22,pre-2026,T8 cured or still paying (credit),50000.0,23725.0,0.47,16089.58,0.68,0.0,False,,319.0,319.0,16519.23,False
+6cd7289b-938c-4380-9a61-d9d3f2bd8264,2025-11-11,pre-2026,T3 bust-out with token payments,65000.0,64873.8,1.0,5000.0,0.08,0.0,False,util80,304.0,304.0,77344.66,False
+18180faa-d4eb-446d-a167-ec171d19fc8a,2025-11-11,pre-2026,"T2 bust-out, never paid, marker",35000.0,33260.02,0.95,0,0.0,0,False,util80,304.0,304.0,50355.22,False
+b67026c9-02b9-4304-bea4-9321eaa9f7f0,2025-12-05,pre-2026,T5 paid down then busted (cycle-and-bust),5000.0,4953.2,2.15,4808.04,0.97,0.0,False,util80|phones2,273.0,273.0,14283.27,False
+61230944-907e-4eb6-b184-c4a8e0eec911,2025-12-05,pre-2026,T3 bust-out with token payments,15000.0,14998.04,1.0,5000.0,0.33,0.6,False,util80|badlink|invite,273.0,273.0,23338.51,False
+588aed68-ae33-4718-937a-2eae7ff93928,2025-12-05,pre-2026,"T2 bust-out, never paid, marker",15000.0,14967.62,1.01,0,0.0,0,False,util80|phones2,273.0,273.0,25576.48,False
+328dc30b-667e-4065-9d26-7633145f7148,2025-12-05,pre-2026,"T2 bust-out, never paid, marker",35000.0,32946.0,0.94,0,0.0,0,False,util80,273.0,273.0,48156.75,False
+e38a6fcc-8dec-4066-8655-c8c5f792aeb6,2025-12-05,pre-2026,T8 cured or still paying (credit),15000.0,10840.87,0.76,12840.869999999999,1.18,0.7,False,,0.0,77.0,0.0,True
+745c45bd-6c05-41cf-8a2e-707c15dd06c0,2025-12-05,pre-2026,"T2 bust-out, never paid, marker",15000.0,14960.45,1.0,0,0.0,0,False,util80,273.0,273.0,25568.39,False
+459d30ae-4480-4550-9fe5-33b6116aa366,2025-12-05,pre-2026,"T7 partial payer, not maxed, rolled (credit-leaning)",35000.0,32021.64,0.91,5336.94,0.17,0.0,False,util80,273.0,273.0,35406.69,False
+c176c281-6a14-4543-b12b-bef6995339e5,2025-12-05,pre-2026,"T2 bust-out, never paid, marker",10000.0,9431.74,0.94,0,0.0,0,False,util80,273.0,273.0,19615.61,False
+b66ea6fa-f8ea-4038-8d93-ae9ec3ce6839,2025-12-05,pre-2026,"T2 bust-out, never paid, marker",15000.0,12413.3,0.83,0,0.0,0,False,util80|badlink,273.0,273.0,25333.66,False
+71a304f0-f868-49ef-80bb-8373c1d60acc,2026-01-28,2026 pre-v2.1,"T2 bust-out, never paid, marker",15000.0,12458.06,1.15,0,0.0,0,False,util80,198.0,198.0,25134.09,False
+63ecdc4c-ab18-4981-b69e-c05b5e7360b9,2026-01-28,2026 pre-v2.1,"T2 bust-out, never paid, marker",25000.0,23747.51,0.95,0,0.0,0,False,util80,229.0,229.0,36414.66,False
+0f885594-d9da-4a1e-9058-2a34469d2937,2026-02-02,2026 pre-v2.1,T3 bust-out with token payments,50000.0,30150.0,1.0,600.0,0.02,0.0,False,util80,214.0,214.0,64800.4,False
+b19c7041-37ea-4b75-bec2-023f895dfb0c,2026-02-03,2026 pre-v2.1,"T2 bust-out, never paid, marker",50000.0,49646.75,0.99,0,0.0,0,False,util80|badlink,214.0,214.0,63556.27,False
+a0f561f6-e96b-4c22-9f32-cea061a14d2a,2026-02-10,2026 pre-v2.1,"T7 partial payer, not maxed, rolled (credit-leaning)",65000.0,39255.73,0.6,3111.1,0.08,0.0,False,,214.0,214.0,78370.16,False
+b1dec97e-8635-442c-b9ea-6c981fe7fa09,2026-02-12,2026 pre-v2.1,T3 bust-out with token payments,35000.0,34628.89,1.12,1673.0,0.05,1.0,False,util80,214.0,214.0,47008.63,False
+3ae853a5-af9f-49e9-ab1f-9c8c6b150a50,2026-02-13,2026 pre-v2.1,"T6 never paid, no marker (credit)",25000.0,8660.98,0.35,0,0.0,0,False,,214.0,214.0,35154.76,False
+b1e0e6fc-15f4-4bcc-91e0-0b4671ed32bc,2026-02-13,2026 pre-v2.1,"T2 bust-out, never paid, marker",65000.0,64890.0,1.0,0,0.0,0,False,util80|badlink,214.0,214.0,80746.02,False
+e4ab3bff-07ad-4127-9c62-648c1f2f2aed,2026-02-13,2026 pre-v2.1,"T2 bust-out, never paid, marker",35000.0,27070.77,1.47,0,0.0,0,False,util80|badlink|phones2,214.0,214.0,47283.87,False
+e1b2987d-578a-4c9d-a12c-54e861895cef,2026-02-15,2026 pre-v2.1,"T2 bust-out, never paid, marker",15000.0,8635.35,0.99,0,0.0,0,False,util80,198.0,198.0,25282.4,False
+1abcafa7-c43c-440e-8e89-1d4f7703ebb6,2026-02-15,2026 pre-v2.1,"T6 never paid, no marker (credit)",35000.0,25749.0,0.74,0,0.0,0,False,,198.0,198.0,46786.01,False
+a73f12fd-ff17-4aee-baf1-0c699de6fe45,2026-02-18,2026 pre-v2.1,T5 paid down then busted (cycle-and-bust),50000.0,49023.46,1.14,24877.18,0.51,0.0,False,util80,198.0,198.0,45342.75,False
+efe5bd55-5357-4899-99ae-18dc41ee4e19,2026-02-18,2026 pre-v2.1,T8 cured or still paying (credit),10000.0,9485.0,1.29,25222.94,2.66,0.16,False,util80,0.0,40.0,0.0,True
+2c4ecef1-3563-485a-bc0b-490f577ac0f0,2026-02-18,2026 pre-v2.1,"T2 bust-out, never paid, marker",15000.0,14997.92,2.83,0,0.0,0,False,util80,198.0,198.0,42519.08,False
+3d02eba4-7028-4d23-9711-55794d3f2b56,2026-02-18,2026 pre-v2.1,T8 cured or still paying (credit),85000.0,33649.39,0.4,78967.95,2.35,1.0,False,,0.0,36.0,0.0,True
+a51102eb-9008-4bcf-9c68-baf81f7baa13,2026-02-18,2026 pre-v2.1,T5 paid down then busted (cycle-and-bust),10000.0,9973.0,7.01,60079.0,6.02,0.0,False,util80|phones2,198.0,198.0,18074.37,False
+13cd75af-88e3-4dac-8a37-8a58c289183d,2026-02-19,2026 pre-v2.1,"T7 partial payer, not maxed, rolled (credit-leaning)",35000.0,27753.07,0.99,1050.0,0.04,0.0,False,util80,198.0,198.0,47370.42,False
+32d76df8-e800-4a48-b06b-f5492233ec73,2026-02-19,2026 pre-v2.1,T3 bust-out with token payments,15000.0,15000.0,1.0,500.0,0.03,0.0,False,util80,198.0,198.0,24500.37,False
+38d3bf3c-e00f-42a2-bf23-4329f5399c9a,2026-02-19,2026 pre-v2.1,T8 cured or still paying (credit),35000.0,34970.2,1.0,103863.29,2.97,0.02,False,util80,0.0,16.0,0.0,True
+2c47aaf6-0f06-4c8c-b24b-8d7389f5d204,2026-02-21,2026 pre-v2.1,T8 cured or still paying (credit),10000.0,9455.13,0.96,23828.03,2.52,0.12,False,util80,0.0,90.0,0.0,True
+42cd37aa-fa57-4258-8beb-e4852b9a221e,2026-02-25,2026 pre-v2.1,"T6 never paid, no marker (credit)",50000.0,13925.57,0.28,0,0.0,0,False,,198.0,198.0,24005.73,False
+eeefea08-7e2d-43f3-82e8-f299839b3e54,2026-02-25,2026 pre-v2.1,T8 cured or still paying (credit),10000.0,8820.61,1.85,19548.87,2.22,0.34,False,util80|phones2,0.0,27.0,0.0,True
+3aa1ad42-96d7-4afa-8661-c1ddf2b8f594,2026-03-02,2026 pre-v2.1,"T7 partial payer, not maxed, rolled (credit-leaning)",35000.0,26675.41,0.95,8005.11,0.3,0.0,False,util80,184.0,184.0,37060.25,False
+cfc84551-ed23-4de4-b5e1-967ecf96bc6a,2026-03-04,2026 pre-v2.1,T3 bust-out with token payments,35000.0,34941.52,1.0,1500.0,0.04,0.0,False,util80|badlink,184.0,184.0,44154.02,False
+99f63cdf-5aff-4a57-8b4d-62cef0497783,2026-03-10,2026 pre-v2.1,T8 cured or still paying (credit),35000.0,25865.0,0.74,24760.739999999998,0.96,0.0,False,,184.0,184.0,10876.57,False
+b073fd85-5afc-45c6-86dc-2fe76175ea72,2026-03-10,2026 pre-v2.1,T3 bust-out with token payments,25000.0,24937.58,1.02,1000.0,0.04,0.0,False,util80|badlink,184.0,184.0,33436.47,False
+8216d3e8-500e-43d1-af27-558adb008b47,2026-03-12,2026 pre-v2.1,"T2 bust-out, never paid, marker",135000.0,134943.5,1.47,0,0.0,0,False,util80|phones2,184.0,184.0,158617.34,False
+e3b8e29e-6da6-484a-89ee-8b75e37d64f9,2026-03-13,2026 pre-v2.1,"T2 bust-out, never paid, marker",150000.0,135244.0,0.99,0,0.0,0,False,util80|badlink|invite,184.0,184.0,175885.15,False
+f493e25f-bf09-4639-9ed3-86ab58aa2b1c,2026-03-16,2026 pre-v2.1,"T2 bust-out, never paid, marker",50000.0,46090.62,0.97,0,0.0,0,False,util80,168.0,168.0,64611.09,False
+1bd0d81d-45a2-4719-8f2f-4f85bf0e525e,2026-03-16,2026 pre-v2.1,T8 cured or still paying (credit),25000.0,24838.83,2.17,108156.7,4.35,0.0,False,util80,0.0,23.0,0.0,True
+e05b279b-4700-4560-9fd2-29c27f6f5a5b,2026-03-18,2026 pre-v2.1,"T4 third-party-funded payments, rolled",15000.0,10241.56,0.74,18371.56,1.79,0.87,False,,45.0,45.0,18167.61,False
+02518ef8-864f-43bd-91a9-6093d5c66b2f,2026-03-18,2026 pre-v2.1,T3 bust-out with token payments,150000.0,141109.01,1.05,8404.62,0.06,0.25,False,util80,168.0,168.0,180660.37,False
+77355354-d078-4f1c-be46-cc8076eb9812,2026-03-18,2026 pre-v2.1,"T7 partial payer, not maxed, rolled (credit-leaning)",35000.0,30860.5,0.88,1000.0,0.03,0.0,False,util80,168.0,168.0,41867.51,False
+45b05715-5cc5-42bc-b598-2ea5a26817a5,2026-03-18,2026 pre-v2.1,"T4 third-party-funded payments, rolled",15000.0,9429.31,0.99,145.0,0.02,1.0,False,util80,168.0,168.0,23984.77,False
+9023fb70-d9b0-45d6-b61e-90c697ec8fde,2026-03-20,2026 pre-v2.1,"T2 bust-out, never paid, marker",10000.0,9821.5,0.98,0,0.0,0,False,util80,168.0,168.0,17898.23,False
+2e8646ca-e276-48f2-967d-0bc98fe20cf2,2026-03-22,2026 pre-v2.1,"T7 partial payer, not maxed, rolled (credit-leaning)",50000.0,17630.84,0.39,2000.0,0.11,0.0,False,,168.0,168.0,26333.86,False
+309d5512-b879-4165-9ec6-b316f4d3d45f,2026-03-26,2026 pre-v2.1,"T2 bust-out, never paid, marker",15000.0,8788.0,0.64,0,0.0,0,False,badlink|invite,168.0,168.0,16904.74,False
+5a02f248-22c2-4010-8d9c-d04ecdced536,2026-03-27,2026 pre-v2.1,T8 cured or still paying (credit),15000.0,14922.3,0.99,17399.97,1.17,0.0,False,util80,76.0,76.0,19442.32,False
+7c9a1870-f144-4b48-9666-6a72406ad563,2026-03-30,2026 pre-v2.1,T8 cured or still paying (credit),115000.0,114501.3,1.0,383157.18,3.35,0.0,False,util80,0.0,39.0,0.0,True
+ca68d5d3-933c-453d-b705-f6aba3f1185d,2026-03-31,2026 pre-v2.1,"T7 partial payer, not maxed, rolled (credit-leaning)",135000.0,86636.98,0.64,35080.0,0.4,0.0,False,,168.0,168.0,66441.56,False
+03fa3f13-e822-4a5d-9287-2795ae4de656,2026-03-31,2026 pre-v2.1,T8 cured or still paying (credit),15000.0,14668.23,0.98,33937.04,2.31,0.72,False,util80,0.0,24.0,0.0,True
+f6d4ef24-c79d-4c85-9a90-2a60c92f8820,2026-03-31,2026 pre-v2.1,"T2 bust-out, never paid, marker",15000.0,14938.0,1.0,0,0.0,0,False,util80|badlink,168.0,168.0,23846.95,False
+ba5e1c88-f420-4474-ab3e-b123c987be61,2026-03-31,2026 pre-v2.1,"T6 never paid, no marker (credit)",15000.0,6658.75,0.44,0,0.0,0,False,,168.0,168.0,22780.15,False
+f79d09a0-dbe2-4661-858f-0262279a94ba,2026-03-31,2026 pre-v2.1,"T2 bust-out, never paid, marker",15000.0,14911.89,0.99,0,0.0,0,False,util80|invite,168.0,168.0,23816.6,False
+2d99f92a-4b1d-45fb-b680-ebde7f743044,2026-04-03,2026 pre-v2.1,T8 cured or still paying (credit),35000.0,34708.97,0.99,47633.04,1.37,0.0,False,util80,0.0,33.0,0.0,True
+206de418-190d-445b-bdb7-75492c3d6f48,2026-04-03,2026 pre-v2.1,"T4 third-party-funded payments, rolled",50000.0,34064.15,0.98,5000.0,0.15,1.0,False,util80,153.0,153.0,56397.2,False
+29210aa8-0650-421e-bc5d-08f230f4d59f,2026-04-03,2026 pre-v2.1,"T2 bust-out, never paid, marker",100000.0,100000.0,1.0,0,0.0,0,False,util80|badlink|sharedacct,153.0,153.0,118084.0,False
+4cfe39dc-2ecd-42bd-b1db-1e0c7449c37b,2026-04-03,2026 pre-v2.1,T3 bust-out with token payments,200000.0,134223.61,1.3,17822.75,0.13,0.01,False,util80|badlink|phones2,153.0,153.0,191783.56,False
+cd76e5f0-4a4c-4118-8d21-1772e60234c0,2026-04-03,2026 pre-v2.1,T3 bust-out with token payments,85000.0,84222.69,1.43,23000.0,0.27,0.0,False,util80,153.0,153.0,100894.05,False
+20d06d09-0dbb-4410-9c90-b9f8175df215,2026-04-03,2026 pre-v2.1,T8 cured or still paying (credit),25000.0,6961.76,0.28,16970.49,2.44,0.0,False,,0.0,44.0,0.0,True
+e3c592d4-8251-4408-b871-81ca35b21469,2026-04-07,2026 pre-v2.1,T3 bust-out with token payments,15000.0,14920.4,1.3,3000.0,0.2,0.0,False,util80|badlink,153.0,153.0,22140.14,False
+ad81364c-d138-46d8-9680-97e1a91ceab3,2026-04-07,2026 pre-v2.1,T3 bust-out with token payments,15000.0,14999.75,1.16,2370.0,0.16,0.0,False,util80|badlink,153.0,153.0,22229.62,False
+9b5f6588-cc14-450c-b30f-3083e3197e7c,2026-04-07,2026 pre-v2.1,"T2 bust-out, never paid, marker",15000.0,14784.0,0.99,0,0.0,0,False,util80,153.0,153.0,21986.32,False
+c2553c5e-8867-42fa-bbf7-3798eb30f7e0,2026-04-07,2026 pre-v2.1,T3 bust-out with token payments,15000.0,14935.48,2.36,5000.0,0.33,1.0,False,util80|phones2,153.0,153.0,22212.4,False
+0574938b-b5df-4998-8a6a-fdcd02188a68,2026-04-07,2026 pre-v2.1,"T7 partial payer, not maxed, rolled (credit-leaning)",85000.0,47527.65,0.56,1054.0,0.02,0.0,False,sharedacct,153.0,153.0,101124.64,False
+9fac15f9-bd57-431d-826b-392b0edd556d,2026-04-07,2026 pre-v2.1,"T2 bust-out, never paid, marker",15000.0,14877.44,0.99,0,0.0,0,False,util80|badlink,153.0,153.0,22091.69,False
+e14949bb-a290-4edc-bc7a-0509da46fa85,2026-04-08,2026 pre-v2.1,"T2 bust-out, never paid, marker",15000.0,15000.0,1.0,0,0.0,0,False,util80,153.0,153.0,22229.91,False
+2e67f79d-4d68-4f3b-9358-22c7e6ec8841,2026-04-14,2026 pre-v2.1,"T7 partial payer, not maxed, rolled (credit-leaning)",150000.0,96612.22,0.64,13000.0,0.13,0.0,False,,153.0,153.0,122763.84,False
+4fa178f7-aba7-446d-808f-defc53c08111,2026-04-20,2026 pre-v2.1,"T2 bust-out, never paid, marker",15000.0,13756.75,0.92,0,0.0,0,False,util80,137.0,137.0,21310.91,False
+1a94b2a8-ea64-4eaf-9e72-e8d6fb24ac71,2026-04-20,2026 pre-v2.1,T3 bust-out with token payments,115000.0,98187.58,1.06,6000.0,0.06,0.0,False,util80,137.0,137.0,138781.72,False
+e458fe98-523d-4d50-9976-c155df9b8763,2026-04-24,2026 pre-v2.1,"T2 bust-out, never paid, marker",15000.0,14949.0,1.0,0,0.0,0,False,util80,137.0,137.0,22697.09,False
+5206ec5e-35b9-401e-935a-9521e4bf5098,2026-04-27,2026 pre-v2.1,"T2 bust-out, never paid, marker",15000.0,14999.0,1.0,0,0.0,0,False,util80,137.0,137.0,22755.22,False
+2f4ee969-68b3-4786-8f9f-abe5be765122,2026-05-05,2026 pre-v2.1,"T2 bust-out, never paid, marker",15000.0,14583.2,0.97,0,0.0,0,False,util80,123.0,123.0,20632.19,False
+5d67575e-2c74-4aad-85f2-6a5b7b99d327,2026-05-06,2026 post-v2.1,T1 documented linkage (ring),150000.0,149932.54,1.0,0,0.0,0,False,util80|badlink,123.0,123.0,173265.01,False
+87ac96f8-92cd-4721-ad7a-dc0951cc975c,2026-05-07,2026 post-v2.1,"T4 third-party-funded payments, rolled",15000.0,14740.96,0.98,17684.87,1.2,1.0,False,util80|badlink,31.0,45.0,15648.5,False
+ca60689d-eba1-47db-8012-74f57b18bb32,2026-05-11,2026 post-v2.1,"T2 bust-out, never paid, marker",15000.0,15000.0,1.0,0,0.0,0,False,util80|sharedacct,123.0,123.0,21102.21,False
+feab1d06-2a4a-4d87-85c0-4a64f6f4cf40,2026-05-11,2026 post-v2.1,T8 cured or still paying (credit),15000.0,12046.09,0.8,13528.14,1.12,0.99,False,util80,0.0,21.0,0.0,True
+73cd0723-1d6d-4566-b340-f21643aeb205,2026-05-11,2026 post-v2.1,"T2 bust-out, never paid, marker",35000.0,10753.11,0.31,0,0.0,0,False,badlink,123.0,123.0,42800.89,False
+3fc0eac8-2e0a-485d-ab24-d1bdabd4e62c,2026-05-11,2026 post-v2.1,"T2 bust-out, never paid, marker",150000.0,149955.0,1.0,0,0.0,0,False,util80|invite,123.0,123.0,173290.32,False
+bdb8ec06-549c-4e93-b46f-d3feba58ef95,2026-05-14,2026 post-v2.1,"T2 bust-out, never paid, marker",15000.0,13880.0,0.93,0,0.0,0,False,util80|badlink,123.0,123.0,20666.17,False
+c25d3136-f655-43fc-9828-9763c9c735a7,2026-05-18,2026 post-v2.1,"T2 bust-out, never paid, marker",35000.0,22402.32,0.85,0,0.0,0,False,util80,107.0,107.0,43184.94,False
+c75c47c4-13b4-406b-9473-3193190456f1,2026-05-26,2026 post-v2.1,"T2 bust-out, never paid, marker",35000.0,34898.51,1.0,0,0.0,0,False,util80,107.0,107.0,43580.87,False
+9861a751-4822-4e43-9c26-8e5869587838,2026-06-09,2026 post-v2.1,"T2 bust-out, never paid, marker",35000.0,34991.5,1.0,0,0.0,0,False,util80,92.0,92.0,41402.37,False
+6f8f5b33-a675-4242-840f-25d360af17f3,2026-06-16,2026 post-v2.1,"T2 bust-out, never paid, marker",15000.0,15000.0,1.0,0,0.0,0,False,util80,76.0,76.0,19515.68,False
+ee909c83-68cb-4c1d-9687-e4ac7788e0c5,2026-06-17,2026 post-v2.1,"T6 never paid, no marker (credit)",25000.0,6237.46,0.25,0,0.0,0,False,,76.0,76.0,8743.69,False
+5b2c7add-cfdf-4144-a61b-50bcb2b17823,2026-06-17,2026 post-v2.1,T3 bust-out with token payments,15000.0,14997.01,1.06,881.5,0.06,0.0,True,util80|phones2,76.0,76.0,19491.6,False
+16b943d6-481a-479f-b05a-72f33fa66aef,2026-06-17,2026 post-v2.1,"T6 never paid, no marker (credit)",50000.0,34880.0,0.7,0,0.0,0,False,,76.0,76.0,41281.29,False
+ada5d6a4-7032-469c-9d84-6efe3d97a4bd,2026-06-23,2026 post-v2.1,"T2 bust-out, never paid, marker",150000.0,126411.1,0.84,0,0.0,0,False,util80|badlink,76.0,76.0,165918.49,False
+cb908f23-8870-458e-b1c9-0a1c211ec2c2,2026-06-23,2026 post-v2.1,"T2 bust-out, never paid, marker",15000.0,14988.8,1.02,0,0.0,0,False,util80,76.0,76.0,19503.41,False
+accf9b2d-f2f1-4bd2-aa63-9e504a6da1c1,2026-07-13,2026 post-v2.1,T1 documented linkage (ring),150000.0,149930.0,1.0,0,0.0,0,False,util80|badlink|invite,61.0,61.0,161245.16,False
+0eef7feb-6940-4b7a-8cd9-f75a89d39748,2026-07-21,2026 post-v2.1,T1 documented linkage (ring),150000.0,143433.35,0.96,0,0.0,0,False,util80|badlink|invite,45.0,45.0,154347.18,False
+cd64db52-8aa1-460f-844c-8f3446c69e06,2026-07-21,2026 post-v2.1,T1 documented linkage (ring),150000.0,7225.98,0.98,0,0.0,0,False,util80|badlink,45.0,45.0,9704.49,False
+d2ace606-f4d3-4744-a045-5dcbcfbe4edd,2026-07-21,2026 post-v2.1,T1 documented linkage (ring),150000.0,36063.4,0.24,0,0.0,0,False,badlink|invite,45.0,45.0,40327.8,False
+4ccf6756-24dd-447d-be55-00b355a0579c,2026-07-21,2026 post-v2.1,T1 documented linkage (ring),150000.0,149974.07,1.0,0,0.0,0,False,util80|badlink|phones2,45.0,45.0,161292.96,False
+eed1cbcb-b19c-49c3-b4c4-becd86ed012f,2026-07-21,2026 post-v2.1,"T2 bust-out, never paid, marker",15000.0,14829.12,1.04,0,0.0,0,False,util80,45.0,45.0,17889.83,False
+da29bb06-a46b-4b4b-a1c6-f68e0bf48b93,2026-07-23,2026 post-v2.1,T1 documented linkage (ring),150000.0,149986.25,1.0,0,0.0,0,False,util80|invite,45.0,45.0,161305.9,False
+5dd503ec-5190-4236-8a01-239fe57eef77,2026-07-29,2026 post-v2.1,T3 bust-out with token payments,15000.0,14981.78,1.13,2000.0,0.13,1.0,False,util80,45.0,45.0,17940.6,False
+fa2eb06f-36a9-48f6-b909-803c36c6560f,2026-07-31,2026 post-v2.1,"T2 bust-out, never paid, marker",35000.0,34873.2,1.0,0,0.0,0,False,util80,45.0,45.0,39063.9,False
+239365b3-9a57-46ed-8ffb-f12a251b6ad1,2026-08-11,2026 post-v2.1,"T2 bust-out, never paid, marker",15000.0,14544.39,1.07,0,0.0,0,False,util80,31.0,31.0,15980.72,False

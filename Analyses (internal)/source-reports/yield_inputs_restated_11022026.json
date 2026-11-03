@@ -1,0 +1,433 @@
+{
+ "_comment": "Restated 2026-11-02: late fees (i2c 0220/LF postings, Aug 2025-May 2026) removed from originated principal; cumulative counts seasoned vintages only. Books unchanged (Jun-Aug 2026).",
+ "as_of": "2026-11-02",
+ "data_asof": {
+  "dashboard": "2026-10-26 snapshot (KPI Dashboard_v2026 (12))",
+  "statements": "2026-11-02",
+  "vintages": "2026-11-02",
+  "pay_a_friend": "2026-10-27"
+ },
+ "fx": 55.8,
+ "months": [
+  "2026-01",
+  "2026-02",
+  "2026-03",
+  "2026-04",
+  "2026-05",
+  "2026-06",
+  "2026-07",
+  "2026-08",
+  "2026-09"
+ ],
+ "books": [
+  "2026-06",
+  "2026-07",
+  "2026-08"
+ ],
+ "dashboard": {
+  "rev_int": {
+   "2026-01": 0,
+   "2026-02": 0,
+   "2026-03": 0,
+   "2026-04": 0,
+   "2026-05": 0,
+   "2026-06": 685463.41,
+   "2026-07": 1501634.9,
+   "2026-08": 1951592.03,
+   "2026-09": 2229680.03
+  },
+  "inst_int": {
+   "2026-01": 1316.21,
+   "2026-02": 47765.48,
+   "2026-03": 134016.53,
+   "2026-04": 220070.96,
+   "2026-05": 257582.01,
+   "2026-06": 340853.06,
+   "2026-07": 403236.04,
+   "2026-08": 445213.13,
+   "2026-09": 486325.05
+  },
+  "upfront": {
+   "2026-01": 2185.69,
+   "2026-02": 146390.53,
+   "2026-03": 291311.38,
+   "2026-04": 307856.48,
+   "2026-05": 320397.94,
+   "2026-06": 337749.34,
+   "2026-07": 290513.47,
+   "2026-08": 341458.41,
+   "2026-09": 439733.93
+  },
+  "late": {
+   "2026-01": 64707.62,
+   "2026-02": 71011.07,
+   "2026-03": 104805.31,
+   "2026-04": 138112.4,
+   "2026-05": 139049.93,
+   "2026-06": 84871.59,
+   "2026-07": 89421.49,
+   "2026-08": 108174.67,
+   "2026-09": 126426.4
+  },
+  "interchange": {
+   "2026-01": 800466.96,
+   "2026-02": 864632.93,
+   "2026-03": 1364620.69,
+   "2026-04": 1521533.27,
+   "2026-05": 1545608.62,
+   "2026-06": 1963194.11,
+   "2026-07": 1811444.75,
+   "2026-08": 1892210.14,
+   "2026-09": 2630889.8
+  },
+  "avg_rec": {
+   "2026-01": 60876935.09,
+   "2026-02": 61287125.635,
+   "2026-03": 78004357.59,
+   "2026-04": 105226683.72,
+   "2026-05": 126178365.54,
+   "2026-06": 143946231.47,
+   "2026-07": 158604610.965,
+   "2026-08": 176625299.92,
+   "2026-09": 211159156.895
+  },
+  "eom_rec": {
+   "2026-01": 59172827.04,
+   "2026-02": 63401424.23,
+   "2026-03": 92607290.95,
+   "2026-04": 117846076.49,
+   "2026-05": 134510654.59,
+   "2026-06": 153381808.35,
+   "2026-07": 163827413.58,
+   "2026-08": 189423186.26,
+   "2026-09": 232895127.53
+  },
+  "purchase_volume": {
+   "2026-01": 59671645.156,
+   "2026-02": 60642780.726,
+   "2026-03": 95344566,
+   "2026-04": 105947213.036,
+   "2026-05": 110400244.168,
+   "2026-06": 137145988.384,
+   "2026-07": 127249656.88,
+   "2026-08": 130388896.484,
+   "2026-09": 190860991.79
+  }
+ },
+ "accrued": {
+  "_comment": "allocate_accrual.py output; only COMPLETE months. rev_int = revolving interest accrued in the calendar month; inst_int = installment interest allocated across cycle days.",
+  "rev_int": {
+   "2026-07": 1658171.4,
+   "2026-08": 2023314.88,
+   "2026-09": 2282599.61
+  },
+  "inst_int": {
+   "2026-06": 380786.2,
+   "2026-07": 430644.66,
+   "2026-08": 467199.88,
+   "2026-09": 517295.33
+  }
+ },
+ "pay_a_friend": {
+  "2026-01": 1060000,
+  "2026-02": 980000,
+  "2026-03": 1900000,
+  "2026-04": 1190000,
+  "2026-05": 2250000,
+  "2026-06": 2040000,
+  "2026-07": 2730000,
+  "2026-08": 2970000,
+  "2026-09": 2650000
+ },
+ "orig_stmt": {
+  "2026-01": 69626973.84,
+  "2026-02": 60748771.28,
+  "2026-03": 89251915.59,
+  "2026-04": 106587474.17,
+  "2026-05": 117744115.17,
+  "2026-06": 136414479.48,
+  "2026-07": 140624271.71,
+  "2026-08": 141888335.14,
+  "2026-09": 160221212.53
+ },
+ "vintages": [
+  {
+   "month": "2026-01",
+   "accounts": 3828,
+   "originated": 69626973.84,
+   "seasoned90": 69626973.84,
+   "d90": 1552854.4,
+   "seasoned90_xfpd": 69483793.31,
+   "d90_xfpd": 1424818.85
+  },
+  {
+   "month": "2026-02",
+   "accounts": 4029,
+   "originated": 60748771.28,
+   "seasoned90": 60748771.28,
+   "d90": 679914.81,
+   "seasoned90_xfpd": 60717404.74,
+   "d90_xfpd": 648548.27
+  },
+  {
+   "month": "2026-03",
+   "accounts": 5113,
+   "originated": 89251915.59,
+   "seasoned90": 89251915.59,
+   "d90": 1578151.07,
+   "seasoned90_xfpd": 88705264.74,
+   "d90_xfpd": 1122438.62
+  },
+  {
+   "month": "2026-04",
+   "accounts": 6505,
+   "originated": 106587474.17,
+   "seasoned90": 106587474.17,
+   "d90": 1986018.67,
+   "seasoned90_xfpd": 105714336.92,
+   "d90_xfpd": 1194002.56
+  },
+  {
+   "month": "2026-05",
+   "accounts": 7564,
+   "originated": 117744115.17,
+   "seasoned90": 117744115.17,
+   "d90": 1601109.41,
+   "seasoned90_xfpd": 116881880.83,
+   "d90_xfpd": 807943.45
+  },
+  {
+   "month": "2026-06",
+   "accounts": 9024,
+   "originated": 136414479.48,
+   "seasoned90": 136414479.48,
+   "d90": 984805.08,
+   "seasoned90_xfpd": 135914605.98,
+   "d90_xfpd": 484931.58
+  },
+  {
+   "month": "2026-07",
+   "accounts": 11366,
+   "originated": 140624271.71,
+   "seasoned90": 55933460.98,
+   "d90": 184847.21,
+   "seasoned90_xfpd": 55873520.97,
+   "d90_xfpd": 120465.2
+  },
+  {
+   "month": "2026-08",
+   "accounts": 12347,
+   "originated": 141888335.14,
+   "seasoned90": 0.0,
+   "d90": 26684.03,
+   "seasoned90_xfpd": 0.0,
+   "d90_xfpd": 26684.03
+  },
+  {
+   "month": "2026-09",
+   "accounts": 13196,
+   "originated": 160221212.53,
+   "seasoned90": 0.0,
+   "d90": 0.0,
+   "seasoned90_xfpd": 0.0,
+   "d90_xfpd": 0.0
+  }
+ ],
+ "loss_window": {
+  "label": "Since January 2026 (all vintages above)",
+  "first_month": "2026-01",
+  "why": "The current underwriting model (V2) was deployed in December 2025 and is the model that originates the portfolio today; earlier vintages were originated under the prior model."
+ },
+ "fraud_controls_note": "\u2022 Fraud controls and their timing. Basic duplicate-applicant checks have been part of decisioning since May 2026 and the first set of major improvements to our second generation credit model were released on 5 May 2026 (v2.1). Version 2.1 sharply reduced uncoordinated first-payment default on new accounts: first-payment defaults fell from 1.2\u20131.5% of cards issued in February\u2013April 2026 to 0.4% of cards issued in May\u2013August. On 24 October 2026 Zed deployed a full suite of fraud-signal policies, informed by its review of first-payment defaults: bank account numbers shared across applicants, repeated selfie or ID images, invite-name mismatches, business-owner income verification and past-due bureau tradelines.",
+ "fpd_note": "\u2022 First-payment defaults (FPD). An account whose first statement was never paid: billed once, no payment at all. Zed treats these as fraud and identity losses for its own account rather than credit losses, and excludes them here on that basis. The principal excluded is shown in column E.",
+ "parent_header": "Book \u2014 the month's receivables and what they earned (interest and late fees arrive the following month)",
+ "internal": {
+  "coupon": 0.19,
+  "advance": 0.8,
+  "wht": 0.0,
+  "hedge": 0.0,
+  "buckets_source": "revolver_transactor_balances_2026-01_to_2026-09_10262026.csv, mean of the three book months' NEXT months? No \u2014 mean of Jul/Aug/Sep (the months whose statements carry the books' interest)",
+  "bal_rev": 77632385,
+  "bal_tra": 76427246,
+  "bal_inst": 31878145,
+  "bal_tot": 185937777,
+  "pib_sum": 186570217.4,
+  "rev_int_billed_stmt": 5720564.2,
+  "loss_rates": {
+   "L_x90": 0.01152,
+   "L_all90": 0.016812,
+   "L_may26x": 0.00906,
+   "L_life90x": 0.013418,
+   "L_life90": 0.01922,
+   "L_x16": 0.01111
+  },
+  "orig_stmt_ref": 442733819.38
+ },
+ "fpd": {
+  "as_of": "2026-11-02",
+  "rows": [
+   {
+    "month": "2026-01",
+    "s16": 69626973.84,
+    "s16x": 69483793.31,
+    "s16_ring": 0.0,
+    "s16_fraud": 111158.89,
+    "s16_credit": 32021.64,
+    "d16": 1552854.4,
+    "d16x": 1424818.85,
+    "ring": 0.0,
+    "fraud": 101350.85,
+    "credit": 26684.7,
+    "n_ring": 0,
+    "n_fraud": 8,
+    "n_credit": 1
+   },
+   {
+    "month": "2026-02",
+    "s16": 60748771.28,
+    "s16x": 60717404.74,
+    "s16_ring": 0.0,
+    "s16_fraud": 31366.54,
+    "s16_credit": 0.0,
+    "d16": 679914.81,
+    "d16x": 648548.27,
+    "ring": 0.0,
+    "fraud": 31366.54,
+    "credit": 0.0,
+    "n_ring": 0,
+    "n_fraud": 5,
+    "n_credit": 0
+   },
+   {
+    "month": "2026-03",
+    "s16": 89251915.59,
+    "s16x": 88705264.74,
+    "s16_ring": 0.0,
+    "s16_fraud": 424327.49,
+    "s16_credit": 122323.36,
+    "d16": 1578151.07,
+    "d16x": 1122438.62,
+    "ring": 0.0,
+    "fraud": 337198.31,
+    "credit": 118514.14,
+    "n_ring": 0,
+    "n_fraud": 11,
+    "n_credit": 5
+   },
+   {
+    "month": "2026-04",
+    "s16": 106587474.17,
+    "s16x": 105714336.92,
+    "s16_ring": 0.0,
+    "s16_fraud": 620483.56,
+    "s16_credit": 252653.69,
+    "d16": 2026156.56,
+    "d16x": 1234140.45,
+    "ring": 0.0,
+    "fraud": 609972.09,
+    "credit": 182044.02,
+    "n_ring": 0,
+    "n_fraud": 13,
+    "n_credit": 10
+   },
+   {
+    "month": "2026-05",
+    "s16": 117744115.17,
+    "s16x": 116881880.83,
+    "s16_ring": 0.0,
+    "s16_fraud": 687891.46,
+    "s16_credit": 174342.88,
+    "d16": 1840083.47,
+    "d16x": 1046917.51,
+    "ring": 0.0,
+    "fraud": 632877.08,
+    "credit": 160288.88,
+    "n_ring": 0,
+    "n_fraud": 17,
+    "n_credit": 8
+   },
+   {
+    "month": "2026-06",
+    "s16": 136414479.48,
+    "s16x": 135914605.98,
+    "s16_ring": 149932.54,
+    "s16_fraud": 291396.1,
+    "s16_credit": 58544.86,
+    "d16": 1634273.99,
+    "d16x": 1134400.49,
+    "ring": 149932.54,
+    "fraud": 291396.1,
+    "credit": 58544.86,
+    "n_ring": 1,
+    "n_fraud": 10,
+    "n_credit": 2
+   },
+   {
+    "month": "2026-07",
+    "s16": 140624271.71,
+    "s16x": 140346493.83,
+    "s16_ring": 0.0,
+    "s16_fraud": 236660.42,
+    "s16_credit": 41117.46,
+    "d16": 1359823.58,
+    "d16x": 1082927.2,
+    "ring": 0.0,
+    "fraud": 235778.92,
+    "credit": 41117.46,
+    "n_ring": 0,
+    "n_fraud": 8,
+    "n_credit": 2
+   },
+   {
+    "month": "2026-08",
+    "s16": 141888335.14,
+    "s16x": 141162037.99,
+    "s16_ring": 636613.05,
+    "s16_fraud": 89684.1,
+    "s16_credit": 0.0,
+    "d16": 1528519.17,
+    "d16x": 804222.02,
+    "ring": 636613.05,
+    "fraud": 87684.1,
+    "credit": 0.0,
+    "n_ring": 6,
+    "n_fraud": 4,
+    "n_credit": 0
+   },
+   {
+    "month": "2026-09",
+    "s16": 160221212.53,
+    "s16x": 160206560.14,
+    "s16_ring": 0.0,
+    "s16_fraud": 14652.39,
+    "s16_credit": 0.0,
+    "d16": 405982.35,
+    "d16x": 391329.96,
+    "ring": 0.0,
+    "fraud": 14652.39,
+    "credit": 0.0,
+    "n_ring": 0,
+    "n_fraud": 2,
+    "n_credit": 0
+   }
+  ],
+  "totals_n": {
+   "ring": 7,
+   "fraud": 61,
+   "credit": 16
+  },
+  "d90_janjun": {
+   "ring": 149932.54,
+   "fraud": 2004160.97,
+   "credit": 546076.6,
+   "n_ring": 1,
+   "n_fraud": 52,
+   "n_credit": 14,
+   "total": 2700170.11,
+   "rate_all": 0.01444,
+   "rate_exring": 0.01419,
+   "rate_exfraud": 0.0108,
+   "rate_exfpd": 0.00979
+  }
+ }
+}
